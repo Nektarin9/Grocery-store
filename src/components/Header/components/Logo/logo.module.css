@@ -1,0 +1,15 @@
+.logoContainer {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.logo {
+	width: 50px;
+}
+.logoName {
+	margin-left: 10px;
+	line-height: 18px;
+	font-size: 18px;
+	font-weight: 600;
+	color: rgb(255, 0, 0);
+}

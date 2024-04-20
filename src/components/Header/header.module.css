@@ -1,0 +1,19 @@
+.headerConteiner {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	border: 1px solid rgba(212, 212, 212, 0.678);
+	background-color: white;
+}
+
+.headerContent {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 70px;
+	margin: auto;
+	max-width: 1400px;
+}
