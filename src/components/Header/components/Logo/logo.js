@@ -6,7 +6,7 @@ export const Logo = () => (
 			<img
 				className={styles.logo}
 				alt='LOVE FOOD'
-				src="https://ltdfoto.ru/images/2024/04/19/love-food-logo-design-illustration_92167-277-pBlhcLbse-transformed.png"
+				src="https://i.postimg.cc/6QmfsCZh/love-food-logo-design-illustration-92167-277-p-Blhc-Lbse-transformed.png"
 			></img>
 			<p className={styles.logoName}>LOVE<br/>FOOD</p>
 		</div>

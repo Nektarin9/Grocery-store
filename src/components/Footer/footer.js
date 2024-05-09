@@ -4,7 +4,7 @@ export const Footer = () => {
 		<footer className={styles.footerContainer}>
 			<div className={styles.footer_content}>
 				<div>
-					<h2 className={styles.footer_contacts}>Мы в социальых сетях</h2>
+					<h2 className={styles.footer_contacts}>Мы в социальных сетях</h2>
 					<a href="https://vk.com/id88581034" target="_blanc">
 						<svg
 							className={`social-links__svg ${styles.svg_icon}`}
