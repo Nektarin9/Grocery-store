@@ -6,6 +6,7 @@
 .rightAligned {
 	display: flex;
 	justify-content: flex-end;
+
 }
 .login {
 	cursor: pointer;

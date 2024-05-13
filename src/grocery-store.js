@@ -1,11 +1,19 @@
 import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { actionGetAllProducts } from './action';
 import { Header, Footer } from './components';
-import { HomePage } from './pages';
+import { HomePage, Product } from './pages';
 import styles from './groceryStore.module.css';
 
 export const GroceryStore = () => {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(actionGetAllProducts());
+	}, [dispatch]);
+
 	return (
 		<>
 			<div className={styles.appColumn}>
@@ -17,10 +25,7 @@ export const GroceryStore = () => {
 						<Route path="/register" element={<div>Регистрация</div>} />
 						<Route path="/basket" element={<div>Корзина</div>} />
 						<Route path="/admin" element={<div>Админ панель</div>} />
-						<Route
-							path="/post/:post_id"
-							element={<div>Информация о товаре</div>}
-						/>
+						<Route path="/product/:product_id" element={<Product />} />
 						<Route path="*" element={<div>Ошибка</div>} />
 					</Routes>
 				</div>

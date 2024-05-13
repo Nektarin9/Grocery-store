@@ -1,3 +1,4 @@
+/*Ленивая загрузка
 import { getCatalog } from '../bff/api';
 import { ACTION_TYPE } from './type';
 
@@ -10,3 +11,4 @@ export const getLoadingProducts = (page) => (dispatch) => {
 		});
 	});
 };
+*/

@@ -27,7 +27,10 @@ export const producSearch = (
 	} else if (selectCategory !== CATEGORIES.allProducts) {
 		search(allProducts, 'SEARCH_BY_CATEGORY');
 	} else {
+		/* Ленивая загрузка
 		search(productСatalog, 'SEARCH_STRING');
+		*/
+		search(allProducts, 'SEARCH_STRING');
 	}
 	return arrayProducts;
 };

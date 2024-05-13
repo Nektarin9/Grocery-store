@@ -1,5 +1,5 @@
 import { selectGetCategory, selectAllСategories } from '../../../../selectors';
-import { setCategory } from '../../../../action';
+import { actionSetCategory } from '../../../../action';
 import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './catalog.module.css';
@@ -12,7 +12,7 @@ export const Catalog = () => {
 	const selectCategory = useSelector(selectGetCategory);
 
 	const selectProduct = (category) => {
-		dispatch(setCategory(category));
+		dispatch(actionSetCategory(category));
 	};
 
 	return (

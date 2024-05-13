@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setCategory } from '../../../../action';
+import { actionSetCategory } from '../../../../action';
+import { BasketIcon } from '../basket-icon/basket-icon';
 import { CATEGORIES } from '../../../../constants';
 import styles from './controlPanel.module.css';
 
@@ -12,12 +13,16 @@ export const ControlPanel = () => {
 				<Link className={styles.menu} to={'/'}>
 					<h2
 						className={styles.menu_text}
-						onClick={() => dispatch(setCategory(CATEGORIES.allProducts))}
+						onClick={() =>
+							dispatch(actionSetCategory(CATEGORIES.allProducts))
+						}
 					>
 						Все товары
 					</h2>
 				</Link>
 			</div>
+			<BasketIcon />
+
 			<div className={styles.rightAligned}>
 				<Link to={'/login'}>
 					<button className={styles.login}>

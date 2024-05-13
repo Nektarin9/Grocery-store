@@ -1,7 +1,7 @@
-import { getCatalog } from '../bff/api';
+import { getСategory } from '../bff/api';
 import { ACTION_TYPE } from './type';
-export const getСatalogСategories = () => (dispatch) =>
-	getCatalog('catalog').then((catalog) => {
+export const actionGetСatalogСategories = () => (dispatch) =>
+	getСategory().then((catalog) => {
 		dispatch({
 			type: ACTION_TYPE.CATEGORY_SIDE_MENU,
 			payload: catalog,

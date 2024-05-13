@@ -1,0 +1,13 @@
+.icon_back {
+	font-size: 45px;
+	width: 100%;
+	color: rgba(21, 21, 21, 0.582);
+	cursor: pointer;
+	transition: 0.15s;
+	transform: 0.15s;
+}
+.icon_back:hover {
+	color: rgb(0, 0, 0);
+	transform: 0.15s;
+	transition: 0.15s;
+}

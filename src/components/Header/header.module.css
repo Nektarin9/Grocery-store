@@ -1,6 +1,7 @@
 .headerConteiner {
 	position: fixed;
 	z-index: 9999;
+	font-size: 30px;
 	top: 0;
 	left: 0;
 	width: 100%;

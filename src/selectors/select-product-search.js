@@ -1,3 +1,3 @@
-export const getProductSearch = (state) => {
+export const selectProductSearch = (state) => {
 	return state.catalogReducer.productSearch;
 };

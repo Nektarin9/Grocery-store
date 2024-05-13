@@ -1,0 +1,29 @@
+.contanet_icon {
+	position: relative;
+	margin: 0 30px 0 10px;
+	font-size: 40px;
+	cursor: pointer;
+	color: rgb(20, 20, 20);
+	transform: 0.15s;
+	transition: 0.15s;
+}
+
+.contanet_icon:hover {
+	transform: 0.15s;
+	transition: 0.15s;
+	color: rgba(0, 0, 0, 0.798);
+}
+
+.cart_counter {
+	position: absolute;
+	right: 0;
+	font-size: 14px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: 500;
+	border-radius: 50%;
+	min-width: 22px;
+	padding: 2px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(129, 1, 1);
+}

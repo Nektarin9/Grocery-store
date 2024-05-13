@@ -1,4 +1,5 @@
 import { Logo, ControlPanel, SearchLine } from './components';
+
 import styles from './header.module.css';
 
 export const Header = () => (

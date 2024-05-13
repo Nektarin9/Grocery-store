@@ -1,27 +1,27 @@
 import { useDispatch } from 'react-redux';
-import { getInputSearch } from '../../../../action';
+import { actionGetInputSearch } from '../../../../action';
 import { useSelector } from 'react-redux';
-import { selectGetCategory, getProductSearch } from '../../../../selectors';
+import { selectGetCategory, selectProductSearch } from '../../../../selectors';
 import { useEffect } from 'react';
 import styles from './searchLine.module.css';
 
 export const SearchLine = () => {
 	const dispatch = useDispatch();
 	const selectCategory = useSelector(selectGetCategory);
-	const inputSearch = useSelector(getProductSearch);
+	const inputSearch = useSelector(selectProductSearch);
 
 	/* Записываем текст фильтра */
 	const productSearch = (event) => {
 		const { target } = event;
 		if (target.value) {
-			dispatch(getInputSearch(target.value));
+			dispatch(actionGetInputSearch(target.value));
 		} else {
-			dispatch(getInputSearch(''));
+			dispatch(actionGetInputSearch(''));
 		}
 	};
 
 	useEffect(() => {
-		dispatch(getInputSearch(''));
+		dispatch(actionGetInputSearch(''));
 	}, [selectCategory, dispatch]);
 
 	return (

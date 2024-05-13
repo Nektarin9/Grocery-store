@@ -3,10 +3,13 @@ import { ACTION_TYPE } from '../action/type';
 export const initialCatalogReducer = {
 	allСategories: [],
 	category: 'Все продукты',
-	loadingProducts: [],
+	product: null,
 	numberProducts: 0,
 	productSearch: '',
 	allProducts: [],
+	/*
+	loadingProducts: [],
+	*/
 };
 
 export const catalogReducer = (state = initialCatalogReducer, action) => {
@@ -19,12 +22,7 @@ export const catalogReducer = (state = initialCatalogReducer, action) => {
 				allProducts: payload,
 			};
 		}
-		case ACTION_TYPE.GET_LOADING_PRODUCTS: {
-			return {
-				...state,
-				loadingProducts: payload,
-			};
-		}
+
 		case ACTION_TYPE.CATEGORY_SIDE_MENU: {
 			return {
 				...state,
@@ -44,7 +42,24 @@ export const catalogReducer = (state = initialCatalogReducer, action) => {
 				productSearch: payload,
 			};
 		}
+		case ACTION_TYPE.GET_PRODUCT: {
+			return {
+				...state,
+				product: payload,
+			};
+		}
 
+
+
+
+			/*
+		case ACTION_TYPE.GET_LOADING_PRODUCTS: {
+			return {
+				...state,
+				loadingProducts: payload,
+			};
+		}
+		*/
 		default:
 			return state;
 	}

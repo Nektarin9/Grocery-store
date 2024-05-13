@@ -101,3 +101,14 @@
 	font-weight: 400;
 	color: rgb(163, 163, 163);
 }
+
+.sort_container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.p_sort {
+	font-size: 18px;
+	cursor: pointer;
+}
