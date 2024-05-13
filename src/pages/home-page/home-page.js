@@ -8,8 +8,9 @@ import {
 	selectAllProducts,
 } from '../../selectors';
 import { actionGetСatalogСategories } from '../../action';
-import { producSearch } from '../../utils/product-search/produc-search';
+import { producSearch } from '../../utils/produc-search';
 import { useState } from 'react';
+import { Loader } from '../../components';
 import styles from './homePage.module.css';
 
 export const HomePage = () => {
@@ -37,9 +38,10 @@ export const HomePage = () => {
 	);
 
 	if (isSort) {
-		products.sort((a, b) => a.priсe - b.priсe);
-	} else {
 		products.sort((a, b) => b.priсe - a.priсe);
+
+	} else {
+		products.sort((a, b) => a.priсe - b.priсe);
 	}
 
 	return (
@@ -55,10 +57,15 @@ export const HomePage = () => {
 						<i className="fa fa-sort-amount-desc" aria-hidden="true" />
 					</p>
 				</div>
-
-				<ul className={styles.products_list}>
-					<Products products={products} />
-				</ul>
+				{!!products.length ? (
+					<ul className={styles.products_list}>
+						<Products products={products} />
+					</ul>
+				) : (
+					<div className={styles.loader_container}>
+						<Loader />
+					</div>
+				)}
 			</div>
 		</>
 	);

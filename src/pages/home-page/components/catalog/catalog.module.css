@@ -18,8 +18,21 @@
 
 .img_catalog {
 	width: 50px;
+	transition: 0.3s;
+	transform: 0.3s;
+	opacity: 0;
+	animation: ani 0.5s forwards;
 }
+@keyframes ani {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+  }
 .text_catalog {
 	font-size: 16px;
 	color: black;
+}
+.loader_container {
+
+	margin: 50px auto;
+	text-align: center;
 }

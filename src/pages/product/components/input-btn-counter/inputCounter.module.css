@@ -1,0 +1,56 @@
+.counter_container {
+	margin: 40px 0 20px 0;
+	display: flex;
+	align-items: center;
+}
+
+.input_counter {
+	width: 50px;
+	height: 30px;
+	border: 1px solid rgb(218, 218, 218);
+	text-align: center;
+	font-size: 18px;
+	margin: 0 5px;
+	border-radius: 5px;
+	font-weight: 600;
+	color: black;
+	background-color: #e5e5e5;
+}
+
+.input_counter:focus {
+	border: 1px solid rgba(116, 116, 116, 0.646);
+}
+.p_price {
+	font-size: 22px;
+	font-weight: 600;
+	color: black;
+}
+
+.error_counter {
+	color: red;
+	font-size: 18px;
+	margin-left: 20px;
+}
+
+.button_counter {
+	font-size: 28px;
+	background: none;
+	padding: 0;
+	cursor: pointer;
+	color: #222;
+	transform: 0.15s;
+	transition: 0.15s;
+}
+.button_counter:hover {
+	color: #7f0f0f;
+	transform: 0.15s;
+	transition: 0.15s;
+}
+
+.btn_cointer_block {
+	font-size: 28px;
+	background: none;
+	padding: 0;
+	color: rgba(0, 0, 0, 0.35);
+	cursor: default;
+}

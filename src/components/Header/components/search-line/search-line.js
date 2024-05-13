@@ -3,6 +3,7 @@ import { actionGetInputSearch } from '../../../../action';
 import { useSelector } from 'react-redux';
 import { selectGetCategory, selectProductSearch } from '../../../../selectors';
 import { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './searchLine.module.css';
 
 export const SearchLine = () => {
@@ -34,9 +35,9 @@ export const SearchLine = () => {
 				placeholder="Начните поиск"
 				maxLength={35}
 			></input>
-			<button className={styles.searchIcon}>
+			<NavLink to={"/"} className={styles.searchIcon}>
 				<i className={`fa fa-neuter`} aria-hidden="true"></i>
-			</button>
+			</NavLink>
 		</div>
 	);
 };

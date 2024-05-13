@@ -1,0 +1,30 @@
+.compound_container {
+	margin: 20px auto;
+	width: 250px;
+	border-radius: 1em;
+	background-color: rgba(205, 205, 205, 0.354);
+	color: black;
+	padding: 5px;
+}
+
+.ul_compound {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.li_compound {
+	text-align: center;
+	font-weight: 600;
+	color: black;
+}
+.p_compound {
+	font-weight: 400;
+	color: rgb(38, 38, 38);
+}
+
+
+.right_container {
+	max-width: 400px;
+	margin: 0 0 45px 0;
+}

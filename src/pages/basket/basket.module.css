@@ -1,0 +1,58 @@
+.basket_container {
+	display: flex;
+	justify-content: right;
+	margin: auto;
+}
+
+.price_container {
+	position: fixed;
+	display: flex;
+	top: 100px;
+	justify-content: center;
+	align-items: center;
+	width: 250px;
+	border-radius: 1rem;
+	padding: 30px 10px;
+	background-color: #f2f2f2;
+}
+
+.p_price {
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+	color: black;
+}
+.btn {
+	margin-top: 30px;
+	width: 160px;
+	height: 50px;
+	border-radius: 1rem;
+	color: white;
+	background-color: rgb(29, 29, 29);
+	font-size: 18px;
+	cursor: pointer;
+	transform: 0.15s;
+	transition: 0.15s;
+}
+
+.btn:hover {
+	transform: 0.15s;
+	transition: 0.15s;
+	background-color: rgba(28, 28, 28, 0.885);
+}
+
+.product_contaner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+	width: 900px;
+	height: 200px;
+	border-radius: 1rem;
+	background-color: #f2f2f2;
+}
+.img_product {
+	height: 200px;
+	width: 300px;
+	border-radius: 1rem;
+}
