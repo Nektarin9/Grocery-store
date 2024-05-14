@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { BackButton } from '../../components';
+import { BackButton, Button } from '../../components';
 import { selectAddProducts } from '../../selectors';
 import { BtnAndInputCounter } from '../../components';
 import { calculateAmount, changeFormatPrice } from '../../utils';
 import styles from './basket.module.css';
+import { actionBasketDelete } from '../../action/baskter-delete';
 
 export const Basket = () => {
 	const productsBasket = useSelector(selectAddProducts);
@@ -15,9 +16,10 @@ export const Basket = () => {
 				<div className={styles.price_container}>
 					<div>
 						<p className={styles.p_price}>
-							Итого: <br />{calculateAmount(productsBasket)} ₽
+							Итого: <br />
+							{calculateAmount(productsBasket)} ₽
 						</p>
-						<button className={styles.btn}>Оформить заказ</button>
+						<Button className={styles.btn}>Оформить заказ</Button>
 					</div>
 				</div>
 			</div>
@@ -29,20 +31,29 @@ export const Basket = () => {
 							className={styles.img_product}
 							alt={title}
 						></img>
-						<BtnAndInputCounter
-							product={{
-								id,
-								imageUrl,
-								inputCounter,
-								priсe,
-								quantity,
-								sum,
-								title,
-							}}
-							inputCounter={inputCounter}
-							pageBasket={true}
-						/>
-						<p>{changeFormatPrice(inputCounter * priсe)} ₽</p>
+
+						<div className={styles.inputn_container}>
+							<p className={styles.p_title}>{title}</p>
+							<BtnAndInputCounter
+								product={{
+									id,
+									imageUrl,
+									inputCounter,
+									priсe,
+									quantity,
+									sum,
+									title,
+								}}
+								inputCounter={inputCounter}
+								pageBasket={true}
+							/>
+						</div>
+						<button onClick={() => dispatch(actionBasketDelete(id))} className={styles.btn_close}>
+							<i className="fa fa-times" aria-hidden="true"></i>
+						</button>
+						<p className={styles.p_price}>
+							{changeFormatPrice(inputCounter * priсe)} ₽
+						</p>
 					</div>
 				),
 			)}

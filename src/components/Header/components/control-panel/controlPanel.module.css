@@ -8,20 +8,7 @@
 	justify-content: flex-end;
 
 }
-.login {
-	cursor: pointer;
-	margin: 0 10px;
-	padding: 10px 17px;
-	font-size: 18px;
-	color: white;
-	background-color: #222;
-	border-radius: 0.5rem;
-	transition: 0.15s;
-}
-.login:hover {
-	transform: 0.15s;
-	background-color: rgba(0, 0, 0, 0.798);
-}
+
 .login_icon {
 	margin-right: 10px;
 }

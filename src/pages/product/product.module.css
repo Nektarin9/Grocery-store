@@ -73,23 +73,10 @@ img {
 	color: black;
 }
 
-.button_basket {
-	margin-top: 50px;
-	border-radius: 1em;
-	font-size: 18px;
-	width: 150px;
-	height: 50px;
-	cursor: pointer;
-	color: white;
-	background-color: #222;
-	transition: 0.15s;
-	transform: 0.15s;
+.button_container {
+	margin-top: 75px;
 }
-.button_basket:hover {
-	background-color: #4d4d4d;
-	transform: 0.15s;
-	transition: 0.15s;
-}
+
 
 .duplication_Error {
 	position: absolute;

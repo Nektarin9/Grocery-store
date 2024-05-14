@@ -1,5 +1,5 @@
-import { changeCounterReducer } from '../utils';
-import { MINUS, PLUS, INPUT } from '../constants';
+import { changeProductBasket as changeProductBasket } from '../utils';
+import { MINUS, PLUS, INPUT, DELETE } from '../constants';
 import { ACTION_TYPE } from '../action/type';
 
 export const initialbasketReducer = {
@@ -17,22 +17,29 @@ export const basketReducer = (state = initialbasketReducer, action) => {
 			};
 		}
 		case ACTION_TYPE.UPDATE_INPUT_PLUS: {
-			changeCounterReducer(state.productsBasket, payload, PLUS);
+			changeProductBasket(state.productsBasket, payload, PLUS);
 			return {
 				...state,
 				productsBasket: [...state.productsBasket],
 			};
 		}
 		case ACTION_TYPE.UPDATE_INPUT_MINUS: {
-			changeCounterReducer(state.productsBasket, payload, MINUS);
+			changeProductBasket(state.productsBasket, payload, MINUS);
 			return {
 				...state,
 				productsBasket: [...state.productsBasket],
 			};
 		}
 		case ACTION_TYPE.UPDATE_INPUT: {
-			console.log(payload);
-			changeCounterReducer(state.productsBasket, payload, INPUT);
+			changeProductBasket(state.productsBasket, payload, INPUT);
+
+			return {
+				...state,
+				productsBasket: [...state.productsBasket],
+			};
+		}
+		case ACTION_TYPE.BASKET_DELETE: {
+			changeProductBasket(state.productsBasket, payload, DELETE);
 
 			return {
 				...state,

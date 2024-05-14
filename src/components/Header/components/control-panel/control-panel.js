@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { actionSetCategory } from '../../../../action';
 import { BasketIcon } from '../basket-icon/basket-icon';
+import { Button } from '../../../button/button';
 import { CATEGORIES } from '../../../../constants';
 import styles from './controlPanel.module.css';
 
@@ -25,13 +26,13 @@ export const ControlPanel = () => {
 
 			<div className={styles.rightAligned}>
 				<Link to={'/login'}>
-					<button className={styles.login}>
+					<Button>
 						<i
 							className={`fa fa-user-o ${styles.login_icon}`}
 							aria-hidden="true"
 						></i>
 						Войти
-					</button>
+					</Button>
 				</Link>
 			</div>
 		</div>

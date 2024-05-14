@@ -9,7 +9,7 @@ import {
 	actionInputCounter,
 } from '../../action';
 import { changeFormatPrice } from '../../utils';
-import { Loader, BackButton, BtnAndInputCounter } from '../../components';
+import { Loader, BackButton, BtnAndInputCounter, Button } from '../../components';
 import { CompositionWidget } from './components';
 import styles from './product.module.css';
 
@@ -22,7 +22,7 @@ export const Product = () => {
 	const product = useSelector(selectProduct);
 
 	const productsBasket = useSelector(selectAddProducts);
-	
+
 	const dispatch = useDispatch();
 	useEffect(() => {
 		if (product) {
@@ -86,12 +86,13 @@ export const Product = () => {
 									</span>
 								</div>
 							)}
-							<button
-								className={styles.button_basket}
-								onClick={() => addProductBascet()}
-							>
-								Добавить
-							</button>
+							<div className={styles.button_container}>
+								<Button
+									onClick={addProductBascet}
+								>
+									Добавить
+								</Button>
+							</div>
 						</div>
 					</div>
 				</>

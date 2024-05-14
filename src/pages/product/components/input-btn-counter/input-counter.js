@@ -24,6 +24,8 @@ export const BtnAndInputCounter = ({ product, inputCounter, pageBasket }) => {
 	const dispatch = useDispatch();
 	/* Валидация кнопок */
 	const btnCounter = (action) => {
+
+
 		if (inputCounterState <= 2) {
 			setBlockingBtnMinus(true);
 		} else {
@@ -107,11 +109,14 @@ export const BtnAndInputCounter = ({ product, inputCounter, pageBasket }) => {
 				<input
 					type="number"
 					onChange={onChangeInputCounter}
-					onFocus={() => setInputCounterState('')}
 					onBlur={() => {
 						if (!inputCounterState) {
 							setInputCounterState(1);
 						}
+						if (inputCounterState === 1) {
+							setBlockingBtnPlus(false)
+						}
+
 						setRemainingGoods(false);
 					}}
 					maxLength={2}
