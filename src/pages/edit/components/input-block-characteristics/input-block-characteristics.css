@@ -1,0 +1,13 @@
+
+
+.input_block {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	height: 100%;
+}
+.text_content {
+	text-align: center;
+	font-size: 18px;
+	color: black;
+}

@@ -7,7 +7,7 @@ export const transformProduct = (dbProducts) => {
 		quantity: dbProducts.quantity,
 		protein: dbProducts.protein,
 		fats: dbProducts.fats,
-		cards: dbProducts.cards,
+		carbohydrates: dbProducts.carbohydrates,
 		calorie: dbProducts.calorie,
 		numberGrams: dbProducts.number_grams,
 		imageUrl: dbProducts.image_url,

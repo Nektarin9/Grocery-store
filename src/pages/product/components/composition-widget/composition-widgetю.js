@@ -12,7 +12,7 @@ export const CompositionWidget = ({ product }) => {
 					<p className={styles.p_compound}>жиры</p>
 				</li>
 				<li className={styles.li_compound}>
-					{product.cards}
+					{product.carbohydrates}
 					<p className={styles.p_compound}>углеводы</p>
 				</li>
 				<li className={styles.li_compound}>

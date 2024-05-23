@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProduct, selectAddProducts, selectInputCounter } from '../../selectors';
 import { checkDuplicates } from './utils';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {
 	actionGetProduct,
@@ -20,7 +20,6 @@ export const Product = () => {
 	const [sum, setSum] = useState(0);
 
 	const product = useSelector(selectProduct);
-
 	const productsBasket = useSelector(selectAddProducts);
 
 	const dispatch = useDispatch();
@@ -58,6 +57,14 @@ export const Product = () => {
 			<BackButton />
 			{product?.id ? (
 				<>
+					<div className={styles.edit_container}>
+						<NavLink to={`/product/${product.id}/edit`}>
+							<i
+								className="fa fa-pencil-square-o fa-2x"
+								aria-hidden="true"
+							></i>
+						</NavLink>
+					</div>
 					<p className={styles.p_category}>{product.category}</p>
 					<div className={styles.container}>
 						<div className={styles.left_container}>
@@ -69,7 +76,7 @@ export const Product = () => {
 						</div>
 						<div className={styles.right_container}>
 							<h2 className={styles.h2_title}>{product.title}</h2>
-							{/* */}
+
 							<p className={styles.p_price}>Цена: {sum} ₽</p>
 
 							<BtnAndInputCounter
@@ -77,7 +84,7 @@ export const Product = () => {
 								inputCounter={inputCounter}
 								pageBasket={false}
 							/>
-							{/* */}
+
 							{duplicationError && (
 								<div className={styles.duplication_Error}>
 									<i className="fa fa-check" aria-hidden="true"></i>
@@ -87,11 +94,7 @@ export const Product = () => {
 								</div>
 							)}
 							<div className={styles.button_container}>
-								<Button
-									onClick={addProductBascet}
-								>
-									Добавить
-								</Button>
+								<Button onClick={addProductBascet}>Добавить</Button>
 							</div>
 						</div>
 					</div>

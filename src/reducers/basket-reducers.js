@@ -1,4 +1,4 @@
-import { changeProductBasket as changeProductBasket } from '../utils';
+import { changeProductBasket } from '../utils';
 import { MINUS, PLUS, INPUT, DELETE } from '../constants';
 import { ACTION_TYPE } from '../action/type';
 

@@ -22,10 +22,12 @@ export const BtnAndInputCounter = ({ product, inputCounter, pageBasket }) => {
 	);
 
 	const dispatch = useDispatch();
+
+
+
+	
 	/* Валидация кнопок */
 	const btnCounter = (action) => {
-
-
 		if (inputCounterState <= 2) {
 			setBlockingBtnMinus(true);
 		} else {
@@ -114,7 +116,7 @@ export const BtnAndInputCounter = ({ product, inputCounter, pageBasket }) => {
 							setInputCounterState(1);
 						}
 						if (inputCounterState === 1) {
-							setBlockingBtnPlus(false)
+							setBlockingBtnPlus(false);
 						}
 
 						setRemainingGoods(false);

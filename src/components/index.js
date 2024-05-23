@@ -4,3 +4,4 @@ export * from './back-button/back-button.js';
 export * from './loader/loader.js';
 export * from '../pages/product/components/input-btn-counter/input-counter.js';
 export * from './button/button.js';
+export * from './input-edit/input-edit.js';

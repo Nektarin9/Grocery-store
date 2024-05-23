@@ -21,7 +21,7 @@ export const HomePage = () => {
 	const inputSearch = useSelector(selectProductSearch);
 	const allProducts = useSelector(selectAllProducts);
 	const selectCategory = useSelector(selectGetCategory);
-
+	
 	const dispatch = useDispatch();
 
 	useEffect(() => {

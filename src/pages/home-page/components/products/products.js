@@ -49,31 +49,23 @@ export const Products = ({ products }) => {
 */
 	return (
 		<>
-			{products.map(
-				({
-					id,
-					image_url: imageUrl,
-					priсe,
-					title,
-					number_grams: numberGrams,
-				}) => {
-					return (
-						<NavLink key={id} to={`/product/${id}`}>
-							<li id={id} className={`${styles.products} ${styles.scale}`}>
-								<img
-									className={`${styles.img_products} ${styles.scale}`}
-									src={imageUrl}
-									alt={title}
-								></img>
-								<p className={styles.price}>{`${priсe} ₽`}</p>
-								<p className={styles.nameProduct}>{title}</p>
-								<p className={styles.text_gram}>{numberGrams}</p>
-								<button className={styles.buyButton}>+</button>
-							</li>
-						</NavLink>
-					);
-				},
-			)}
+			{products.map(({ id, imageUrl, priсe, title, numberGrams }) => {
+				return (
+					<NavLink key={id} to={`/product/${id}`}>
+						<li id={id} className={`${styles.products} ${styles.scale}`}>
+							<img
+								className={`${styles.img_products} ${styles.scale}`}
+								src={imageUrl}
+								alt={title}
+							></img>
+							<p className={styles.price}>{`${priсe} ₽`}</p>
+							<p className={styles.nameProduct}>{title}</p>
+							<p className={styles.text_gram}>{numberGrams}</p>
+							<button className={styles.buyButton}>+</button>
+						</li>
+					</NavLink>
+				);
+			})}
 		</>
 	);
 };

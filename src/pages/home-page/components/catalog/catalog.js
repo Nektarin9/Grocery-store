@@ -10,7 +10,6 @@ export const Catalog = () => {
 	const allСategories = useSelector(selectAllСategories);
 	/* Выбранная категория */
 	const selectCategory = useSelector(selectGetCategory);
-
 	const selectProduct = (category) => {
 		dispatch(actionSetCategory(category));
 	};

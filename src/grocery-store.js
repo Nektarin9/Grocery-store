@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { actionGetAllProducts } from './action';
 import { Header, Footer } from './components';
-import { HomePage, Product, Basket } from './pages';
+import { HomePage, Product, Basket, Edit } from './pages';
 import styles from './groceryStore.module.css';
 
 export const GroceryStore = () => {
@@ -26,6 +26,10 @@ export const GroceryStore = () => {
 						<Route path="/basket" element={<Basket />} />
 						<Route path="/admin" element={<div>Админ панель</div>} />
 						<Route path="/product/:product_id" element={<Product />} />
+						<Route
+							path="/product/:product_id/edit"
+							element={<Edit/>}
+						/>
 						<Route path="*" element={<div>Ошибка</div>} />
 					</Routes>
 				</div>
