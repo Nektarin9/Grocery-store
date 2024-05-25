@@ -8,7 +8,15 @@
 	background-color: rgb(255, 255, 255);
 }
 .content {
+	position: relative;
 	padding: 120px 0;
 	margin: 0 auto;
 	width: 1400px;
+}
+
+.addProduct {
+	position: fixed;
+    right: 246px;
+    bottom: 50px;
+	z-index: 50;
 }

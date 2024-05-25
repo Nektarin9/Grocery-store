@@ -21,7 +21,7 @@ export const HomePage = () => {
 	const inputSearch = useSelector(selectProductSearch);
 	const allProducts = useSelector(selectAllProducts);
 	const selectCategory = useSelector(selectGetCategory);
-	
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -39,7 +39,6 @@ export const HomePage = () => {
 
 	if (isSort) {
 		products.sort((a, b) => b.priсe - a.priсe);
-
 	} else {
 		products.sort((a, b) => a.priсe - b.priсe);
 	}

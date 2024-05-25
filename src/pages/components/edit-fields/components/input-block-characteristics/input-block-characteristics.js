@@ -1,4 +1,4 @@
-import { InputEdit } from '../../../../components';
+import { InputEdit } from '../../../../../components';
 import styles from './input-block-characteristics.css';
 export const InputBlockCharacteristics = ({
 	value,

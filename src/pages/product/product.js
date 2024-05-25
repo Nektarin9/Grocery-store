@@ -70,7 +70,7 @@ export const Product = () => {
 						<div className={styles.left_container}>
 							<img src={product.imageUrl} alt={product.title}></img>
 							<h3>О товаре</h3>
-							<p className={styles.p_gram}>{product.numberGrams}</p>
+							<p className={styles.p_gram}>{product.numberGrams} г</p>
 							<div className={styles.text_content}>{product.content}</div>
 							<CompositionWidget product={product} />
 						</div>

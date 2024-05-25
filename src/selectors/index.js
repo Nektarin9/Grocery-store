@@ -6,3 +6,5 @@ export * from './select-all-products.js';
 export * from './select-product';
 export * from './select-add-products-basket.js';
 export * from './select-input-counter.js';
+export * from './select-status-product.js';
+export * from './select-status-editing.js';

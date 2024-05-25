@@ -1,3 +1,4 @@
+import { changeProduct } from '../utils';
 import { ACTION_TYPE } from '../action/type';
 
 export const initialCatalogReducer = {
@@ -7,9 +8,6 @@ export const initialCatalogReducer = {
 	numberProducts: 0,
 	productSearch: '',
 	allProducts: [],
-	/*
-	loadingProducts: [],
-	*/
 };
 
 export const catalogReducer = (state = initialCatalogReducer, action) => {
@@ -22,7 +20,24 @@ export const catalogReducer = (state = initialCatalogReducer, action) => {
 				allProducts: payload,
 			};
 		}
-
+		case ACTION_TYPE.UPDATE_PRODUCT: {
+			return {
+				...state,
+				allProducts: [...changeProduct(state.allProducts, payload, 'UPDATE')],
+			};
+		}
+		case ACTION_TYPE.DELETE_PRODUCT: {
+			return {
+				...state,
+				allProducts: [...changeProduct(state.allProducts, payload, 'DELETE')],
+			};
+		}
+		case ACTION_TYPE.ADD_PRODUCT: {
+			return {
+				...state,
+				allProducts: [...changeProduct(state.allProducts, payload, 'ADD')],
+			};
+		}
 		case ACTION_TYPE.CATEGORY_SIDE_MENU: {
 			return {
 				...state,
@@ -49,10 +64,7 @@ export const catalogReducer = (state = initialCatalogReducer, action) => {
 			};
 		}
 
-
-
-
-			/*
+		/*
 		case ACTION_TYPE.GET_LOADING_PRODUCTS: {
 			return {
 				...state,

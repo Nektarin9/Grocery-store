@@ -1,0 +1,6 @@
+.btn_container {
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	gap: 80px;
+}

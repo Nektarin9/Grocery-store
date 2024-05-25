@@ -10,3 +10,8 @@ export * from './input-counter.js';
 export * from './update-input-plus.js';
 export * from './update-input-minus.js';
 export * from './update-input.js';
+export * from './update-product';
+export * from './delete-product.js';
+export * from './get-status.product.js';
+export * from './get-status-editing.js';
+export * from './add-product.js';
