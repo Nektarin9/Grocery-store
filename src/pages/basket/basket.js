@@ -5,6 +5,7 @@ import { BtnAndInputCounter } from '../../components';
 import { calculateAmount, changeFormatPrice } from '../../utils';
 import styles from './basket.module.css';
 import { actionBasketDelete } from '../../action/baskter-delete';
+import { Link } from 'react-router-dom';
 
 export const Basket = () => {
 	const productsBasket = useSelector(selectAddProducts);
@@ -26,11 +27,13 @@ export const Basket = () => {
 			{productsBasket.map(
 				({ id, imageUrl, inputCounter, priсe, quantity, sum, title }) => (
 					<div id={id} key={id} className={styles.product_contaner}>
+						<Link to={`/product/${id}`}>
 						<img
 							src={imageUrl}
 							className={styles.img_product}
 							alt={title}
 						></img>
+						</Link>
 
 						<div className={styles.inputn_container}>
 							<p className={styles.p_title}>{title}</p>

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { actionGetAllProducts } from './action';
 import { Header, Footer } from './components';
-import { HomePage, Product, Basket, Editing, Addition } from './pages';
+import { HomePage, Product, Basket, Editing, Addition, CategoryEditor } from './pages';
 import styles from './groceryStore.module.css';
 
 export const GroceryStore = () => {
@@ -28,6 +28,7 @@ export const GroceryStore = () => {
 						<Route path="/product/:product_id" element={<Product />} />
 						<Route path="/product/:product_id/edit" element={<Editing />} />
 						<Route path="/add" element={<Addition />} />
+						<Route path="/editing-category" element={<CategoryEditor />} />
 						<Route path="*" element={<div>Ошибка</div>} />
 					</Routes>
 					<NavLink to={'/add'} className={styles.addProduct}>

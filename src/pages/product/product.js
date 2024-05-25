@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProduct, selectAddProducts, selectInputCounter } from '../../selectors';
 import { checkDuplicates } from './utils';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {
 	actionGetProduct,
 	actionAddProductsBasket,
 	actionInputCounter,
+	actionUpdateStatusProduct,
+	actionGetStatusEditing,
 } from '../../action';
 import { changeFormatPrice } from '../../utils';
 import { Loader, BackButton, BtnAndInputCounter, Button } from '../../components';
@@ -18,7 +20,7 @@ export const Product = () => {
 	const inputCounter = useSelector(selectInputCounter);
 	const [duplicationError, setDuplicationError] = useState(false);
 	const [sum, setSum] = useState(0);
-
+	const navigate = useNavigate();
 	const product = useSelector(selectProduct);
 	const productsBasket = useSelector(selectAddProducts);
 
@@ -48,6 +50,9 @@ export const Product = () => {
 				inputCounter: inputCounter,
 			};
 			dispatch(actionAddProductsBasket(arrayBasket));
+			navigate('/');
+			dispatch(actionUpdateStatusProduct('Товар успешно добавлен в корзину'));
+			dispatch(actionGetStatusEditing(true));
 		} else {
 			setDuplicationError(true);
 		}

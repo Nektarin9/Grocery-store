@@ -4,15 +4,15 @@ export const CompositionWidget = ({ product }) => {
 		<div className={styles.compound_container}>
 			<ul className={styles.ul_compound}>
 				<li className={styles.li_compound}>
-					{product.protein}
+					{product.protein} г
 					<p className={styles.p_compound}>белки</p>
 				</li>
 				<li className={styles.li_compound}>
-					{product.fats}
+					{product.fats} г
 					<p className={styles.p_compound}>жиры</p>
 				</li>
 				<li className={styles.li_compound}>
-					{product.carbohydrates}
+					{product.carbohydrates} г
 					<p className={styles.p_compound}>углеводы</p>
 				</li>
 				<li className={styles.li_compound}>

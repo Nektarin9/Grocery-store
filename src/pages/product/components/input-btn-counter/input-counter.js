@@ -25,7 +25,7 @@ export const BtnAndInputCounter = ({ product, inputCounter, pageBasket }) => {
 
 
 
-	
+
 	/* Валидация кнопок */
 	const btnCounter = (action) => {
 		if (inputCounterState <= 2) {
@@ -62,7 +62,6 @@ export const BtnAndInputCounter = ({ product, inputCounter, pageBasket }) => {
 	/* Валидация  инпута */
 	const onChangeInputCounter = ({ target }) => {
 		if (
-			target.value.length < 3 &&
 			Number(target.value) <= product.quantity &&
 			Number(target.value) > 0
 		) {

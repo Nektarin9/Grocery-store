@@ -1,9 +1,7 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+
 import { InputEdit } from '../../../components';
 import { InputBlockCharacteristics } from './components';
-import { selectAllСategories } from '../../../selectors';
-import { actionGetСatalogСategories } from '../../../action';
+import { SelectCategories } from '../../../components';
 import styles from './edit-fields.module.css';
 export const EditFields = ({
 	changeCategory,
@@ -29,29 +27,13 @@ export const EditFields = ({
 	changeGrams,
 	setСhangeGrams,
 }) => {
-	const allСategories = useSelector(selectAllСategories);
-	const dispatch = useDispatch()
-	useEffect(() => {
-		dispatch(actionGetСatalogСategories());
-
-	}, [dispatch, allСategories])
 
 
 	return (
 		<div className={styles.container}>
 			<h3>Категория</h3>
-			<select
-				value={changeCategory}
-				onChange={({ target }) => setСhangeCategory(target.value)}
-				className={styles.select_category}
-				name="select"
-			>
-				{allСategories.map(({ category }) => (
-					<option key={category} value={category} className={styles.option}>
-						{category}
-					</option>
-				))}
-			</select>
+			<SelectCategories changeCategory={changeCategory} setСhangeCategory={setСhangeCategory}/>
+
 			<h3>Название товара</h3>
 			<InputEdit
 				value={changeTitle}
@@ -96,7 +78,7 @@ export const EditFields = ({
 					setValue={setСhangeProtein}
 					width={'50px'}
 					placeholder="г"
-					text={'Протеины (г)'}
+					text={'Белки (г)'}
 				/>
 				<InputBlockCharacteristics
 					value={changeFats}

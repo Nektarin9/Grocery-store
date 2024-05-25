@@ -1,16 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { EditFields } from '../components/edit-fields/edit-fields';
 import { BackButton, Button } from '../../components';
 import {
 	actionAddProduct,
 	actionGetStatusEditing,
+	actionGetСatalogСategories,
 	actionUpdateStatusProduct,
 } from '../../action';
-import styles from './addition.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import styles from './addition.module.css';
+import { selectAllСategories } from '../../selectors';
 
 export const Addition = () => {
+	const allCategories = useSelector(selectAllСategories);
 	const [changeCategory, setСhangeCategory] = useState('');
 	const [changeTitle, setСhangeTitle] = useState('');
 	const [changeInputUrl, setСhangeInputUrl] = useState('');
@@ -25,6 +28,15 @@ export const Addition = () => {
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		dispatch(actionGetСatalogСategories());
+	}, [dispatch]);
+
+	useEffect(() => {
+		setСhangeCategory(allCategories[0]?.category);
+	}, [dispatch, allCategories]);
+
 	const addProduct = () => {
 		const data = {
 			changeCategory,

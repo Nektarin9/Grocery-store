@@ -1,16 +1,16 @@
-export const changeProduct = (allProducts, payload, type) => {
+export const changeProduct = (data, payload, type) => {
 	if (type === 'UPDATE') {
-		const copyAllProducts = [...allProducts];
-		copyAllProducts.forEach(({ id }, index) => {
+		const copyData = [...data];
+		copyData.forEach(({ id }, index) => {
 			if (id === payload.id) {
-				copyAllProducts[index] = { ...payload };
+				copyData[index] = { ...payload };
 			}
 		});
-		return copyAllProducts;
+		return copyData;
 	} else if (type === 'DELETE') {
-		return allProducts.filter((product) => product.id !== payload);
+		return data.filter((product) => product.id !== payload);
 	} else if (type === 'ADD') {
-		allProducts.push(payload);
-		return allProducts
+		data.push(payload);
+		return data;
 	}
 };

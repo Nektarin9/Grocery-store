@@ -3,16 +3,7 @@
 	width: 100%;
 	margin: 20px auto;
 }
-.select_category {
-	width: 200px;
-	height: 35px;
-	padding: 5px;
-	font-size: 18px;
-	border-radius: 5px;
-}
-.option {
-	border-radius: 5px;
-}
+
 .container_characteristics {
 	margin: 15px auto;
 	display: flex;

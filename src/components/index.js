@@ -5,3 +5,4 @@ export * from './loader/loader.js';
 export * from '../pages/product/components/input-btn-counter/input-counter.js';
 export * from './button/button.js';
 export * from './input-edit/input-edit.js';
+export * from './select-categories/select-categories.js';

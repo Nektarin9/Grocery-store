@@ -12,6 +12,7 @@ import { producSearch } from '../../utils/produc-search';
 import { useState } from 'react';
 import { Loader } from '../../components';
 import styles from './homePage.module.css';
+import { NavLink } from 'react-router-dom';
 
 export const HomePage = () => {
 	const [isSort, setIsSort] = useState(false);
@@ -46,7 +47,12 @@ export const HomePage = () => {
 	return (
 		<>
 			<ul className={styles.catalog}>
-				<h2 className={styles.h2_catalog}>Каталог</h2>
+				<div className={styles.flex_catalog}>
+					<h2 className={styles.h2_catalog}>Каталог</h2>
+					<NavLink to={"/editing-category"}>
+						<i className="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+					</NavLink>
+				</div>
 				<Catalog />
 			</ul>
 			<div className={styles.products_container}>

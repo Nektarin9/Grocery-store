@@ -5,6 +5,11 @@
 	margin: auto;
 	border-radius: 1rem;
 }
+.flex_catalog {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 .h2_catalog {
 	margin-left: 12px;
 	width: auto;

@@ -15,3 +15,5 @@ export * from './delete-product.js';
 export * from './get-status.product.js';
 export * from './get-status-editing.js';
 export * from './add-product.js';
+export * from './add-category.js';
+export * from './delete-category.js';

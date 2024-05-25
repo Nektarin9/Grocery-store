@@ -44,6 +44,18 @@ export const catalogReducer = (state = initialCatalogReducer, action) => {
 				allСategories: payload,
 			};
 		}
+		case ACTION_TYPE.ADD_CATEGORY: {
+			return {
+				...state,
+				allСategories: [...changeProduct(state.allСategories, payload, 'ADD')],
+			};
+		}
+		case ACTION_TYPE.DELETE_CATEGORY: {
+			return {
+				...state,
+				allСategories: [...changeProduct(state.allСategories, payload, 'DELETE')],
+			};
+		}
 		case ACTION_TYPE.SET_CATEGORY: {
 			return {
 				...state,

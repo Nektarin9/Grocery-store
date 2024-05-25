@@ -1,7 +1,5 @@
 export const getСategory = () => {
-	return fetch(`http://localhost:3005/category`)
-		.then((loadedData) => {
-			return loadedData.json();
-		})
-		.then((result) => result);
+	return fetch(`http://localhost:3005/categories`)
+		.then((loadedCategory) => loadedCategory.json())
+		.then((loadedCategory) => loadedCategory)
 };

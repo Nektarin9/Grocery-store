@@ -17,11 +17,12 @@ export const Catalog = () => {
 	return (
 		<>
 			{!!allСategories.length
-				? allСategories.map(({ category, image_url }) => {
+				? allСategories.map(({ category, image_url, id }) => {
+
 						return (
 							<li
 								onClick={() => selectProduct(category)}
-								key={category}
+								key={id}
 								className={
 									selectCategory === category
 										? `${styles.catalog_container} ${styles.color_container_category}`

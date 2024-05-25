@@ -60,7 +60,7 @@ export const Products = ({ products }) => {
 							></img>
 							<p className={styles.price}>{`${priсe} ₽`}</p>
 							<p className={styles.nameProduct}>{title}</p>
-							<p className={styles.text_gram}>{numberGrams}</p>
+							<p className={styles.text_gram}>{numberGrams} г</p>
 							<button className={styles.buyButton}>+</button>
 						</li>
 					</NavLink>
