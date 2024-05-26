@@ -1,0 +1,25 @@
+.container {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 216px;
+    right: -191px;
+    top: 84px;
+	padding: 5px;
+	background-color: rgba(154, 11, 11, 0.637);
+	border-radius: 8px;
+	color: white;
+	transition: 0.3s;
+	transform: 0.3s;
+	opacity: 0;
+	animation: ani 0.5s forwards;
+}
+@keyframes ani {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { BackButton, Button, InputEdit, SelectCategories } from '../../components';
+import {
+	BackButton,
+	Button,
+	InputEdit,
+	SelectCategories,
+	ErrorMessage,
+} from '../../components';
 import {
 	actionGetStatusEditing,
 	actionUpdateStatusProduct,
@@ -15,9 +21,12 @@ export const CategoryEditor = () => {
 	const [nameCategory, setNameCategory] = useState('');
 	const [urlImg, setUrlImg] = useState('');
 	const [changeCategory, setСhangeCategory] = useState('');
+
+	const [errorMessage, setErrorMessage] = useState(false);
 	const allСategories = useSelector(selectAllСategories);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+
 	const addCategory = () => {
 		const data = {
 			nameCategory,
@@ -41,6 +50,9 @@ export const CategoryEditor = () => {
 			navigate('/');
 			dispatch(actionGetStatusEditing(true));
 		}
+		else {
+			setErrorMessage(true)
+		}
 	};
 	const deleteCategory = () => {
 		let idCategory;
@@ -62,6 +74,13 @@ export const CategoryEditor = () => {
 		<>
 			<BackButton />
 			<div className={styles.container}>
+				{errorMessage && (
+					<div className={styles.message}>
+						<ErrorMessage>
+							Поля должны быть заполнены, категории не могут повторяться
+						</ErrorMessage>
+					</div>
+				)}
 				<InputEdit
 					value={urlImg}
 					setValue={setUrlImg}
