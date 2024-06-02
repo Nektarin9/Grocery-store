@@ -17,7 +17,7 @@ export const Catalog = () => {
 	return (
 		<>
 			{!!allСategories.length
-				? allСategories.map(({ category, image_url, id }) => {
+				? allСategories.map(({ category, urlImg, id }) => {
 
 						return (
 							<li
@@ -31,7 +31,7 @@ export const Catalog = () => {
 							>
 								<img
 									className={styles.img_catalog}
-									src={image_url}
+									src={urlImg}
 									alt={category}
 								></img>
 								<p className={styles.text_catalog}>{category}</p>

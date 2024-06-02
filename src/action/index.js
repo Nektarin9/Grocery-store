@@ -17,3 +17,5 @@ export * from './get-status-editing.js';
 export * from './add-product.js';
 export * from './add-category.js';
 export * from './delete-category.js';
+export * from './clear-product.js';
+export * from './baskter-delete.js';

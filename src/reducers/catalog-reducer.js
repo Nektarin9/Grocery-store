@@ -4,7 +4,7 @@ import { ACTION_TYPE } from '../action/type';
 export const initialCatalogReducer = {
 	allСategories: [],
 	category: 'Все продукты',
-	product: null,
+	product: {},
 	numberProducts: 0,
 	productSearch: '',
 	allProducts: [],
@@ -12,7 +12,6 @@ export const initialCatalogReducer = {
 
 export const catalogReducer = (state = initialCatalogReducer, action) => {
 	const { type, payload } = action;
-
 	switch (type) {
 		case ACTION_TYPE.GET_ALL_PRODUCTS: {
 			return {
@@ -74,6 +73,17 @@ export const catalogReducer = (state = initialCatalogReducer, action) => {
 				...state,
 				product: payload,
 			};
+		}
+		case ACTION_TYPE.CLEAR_PRODUCT: {
+			if (state.product?.id) {
+				for (let key in state.product) {
+					// Удаляем каждое свойство из объекта
+					delete state.product[key];
+				}
+			}
+				return {
+					...state,
+				};
 		}
 
 		/*

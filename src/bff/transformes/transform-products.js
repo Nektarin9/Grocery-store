@@ -1,9 +1,9 @@
 export const transformProduct = (dbProducts) => {
 	return {
-		id: dbProducts.id,
+		id: dbProducts._id,
 		category: dbProducts.category,
 		title: dbProducts.title,
-		priсe: dbProducts.priсe,
+		price: dbProducts.price,
 		quantity: dbProducts.quantity,
 		protein: dbProducts.protein,
 		fats: dbProducts.fats,

@@ -27,7 +27,7 @@ export const Product = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		if (product) {
-			setSum(changeFormatPrice(product.priсe * inputCounter));
+			setSum(changeFormatPrice(product.price * inputCounter));
 		}
 	}, [inputCounter, product]);
 
@@ -43,7 +43,7 @@ export const Product = () => {
 			const arrayBasket = {
 				id: product.id,
 				title: product.title,
-				priсe: product.priсe,
+				price: product.price,
 				quantity: product.quantity,
 				imageUrl: product.imageUrl,
 				sum: Number(sum.replace(' ', '')),

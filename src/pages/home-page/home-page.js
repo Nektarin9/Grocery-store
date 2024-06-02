@@ -7,12 +7,12 @@ import {
 	selectProductSearch,
 	selectAllProducts,
 } from '../../selectors';
-import { actionGetСatalogСategories } from '../../action';
+import { actionGetСatalogСategories, actionClearProduct } from '../../action';
 import { producSearch } from '../../utils/produc-search';
 import { useState } from 'react';
 import { Loader } from '../../components';
-import styles from './homePage.module.css';
 import { NavLink } from 'react-router-dom';
+import styles from './homePage.module.css';
 
 export const HomePage = () => {
 	const [isSort, setIsSort] = useState(false);
@@ -27,6 +27,7 @@ export const HomePage = () => {
 
 	useEffect(() => {
 		dispatch(actionGetСatalogСategories());
+		dispatch(actionClearProduct())
 	}, [dispatch]);
 
 	/*Поиск*/
@@ -39,9 +40,9 @@ export const HomePage = () => {
 	);
 
 	if (isSort) {
-		products.sort((a, b) => b.priсe - a.priсe);
+		products.sort((a, b) => b.price - a.price);
 	} else {
-		products.sort((a, b) => a.priсe - b.priсe);
+		products.sort((a, b) => a.price - b.price);
 	}
 
 	return (

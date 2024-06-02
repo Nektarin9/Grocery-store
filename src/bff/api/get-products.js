@@ -1,7 +1,10 @@
 import { transformProduct } from '../transformes';
 
 export const getProducts = () => {
-	return fetch(`http://localhost:3005/products`)
+	return fetch(`http://localhost:4000/store`)
 		.then((loadedData) => loadedData.json())
-		.then((loadedProducts) => loadedProducts && loadedProducts.map(transformProduct));
+		.then((loadedProducts) => {
+			console.log(loadedProducts)
+			return loadedProducts && loadedProducts.map(transformProduct)
+		})
 };

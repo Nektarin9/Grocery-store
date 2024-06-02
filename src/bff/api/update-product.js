@@ -1,12 +1,12 @@
 import { transformProduct } from '../transformes';
 export const updateProduct = (id, data) =>
-	fetch(`http://localhost:3005/products/${id}`, {
+	fetch(`http://localhost:4000/store/product/${id}`, {
 		method: 'PUT',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({
 			category: data.changeCategory,
 			title: data.changeTitle,
-			priсe: data.changePrice,
+			price: data.changePrice,
 			quantity: data.changeQuantity,
 			protein: data.changeProtein,
 			fats: data.changeFats,

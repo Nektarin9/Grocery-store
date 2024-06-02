@@ -49,7 +49,7 @@ export const Products = ({ products }) => {
 */
 	return (
 		<>
-			{products.map(({ id, imageUrl, priсe, title, numberGrams }) => {
+			{products.map(({ id, imageUrl, price, title, numberGrams }) => {
 				return (
 					<NavLink key={id} to={`/product/${id}`}>
 						<li id={id} className={`${styles.products} ${styles.scale}`}>
@@ -58,7 +58,7 @@ export const Products = ({ products }) => {
 								src={imageUrl}
 								alt={title}
 							></img>
-							<p className={styles.price}>{`${priсe} ₽`}</p>
+							<p className={styles.price}>{`${price} ₽`}</p>
 							<p className={styles.nameProduct}>{title}</p>
 							<p className={styles.text_gram}>{numberGrams} г</p>
 							<button className={styles.buyButton}>+</button>

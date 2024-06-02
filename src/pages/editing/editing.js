@@ -38,7 +38,7 @@ export const Editing = () => {
 		setСhangeTitle(product?.title);
 		setСhangeInputUrl(product?.imageUrl);
 		setСhangeContent(product?.content);
-		setСhangePrice(product?.priсe);
+		setСhangePrice(product?.price);
 		setСhangeQuantity(product?.quantity);
 		setСhangeProtein(product?.protein);
 		setСhangeFats(product?.fats);

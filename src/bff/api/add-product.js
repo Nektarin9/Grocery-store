@@ -1,13 +1,13 @@
 import { transformProduct } from '../transformes';
 
 export const addProduct = (data) =>
-	fetch('http://localhost:3005/products', {
+	fetch('http://localhost:4000/store/products', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({
 			category: data.changeCategory,
 			title: data.changeTitle,
-			priсe: data.changePrice,
+			price: data.changePrice,
 			quantity: data.changeQuantity,
 			protein: data.changeProtein,
 			fats: data.changeFats,
@@ -19,4 +19,7 @@ export const addProduct = (data) =>
 		}),
 	})
 		.then((loadedProduct) => loadedProduct.json())
-		.then((loadedProduct) => loadedProduct && transformProduct(loadedProduct));
+		.then((loadedProduct) => {
+
+			return loadedProduct && transformProduct(loadedProduct)}
+		);
