@@ -1,7 +1,7 @@
 import { transformProduct } from '../transformes';
 
 export const addProduct = (data) =>
-	fetch('http://localhost:4000/store/products', {
+	fetch('/products', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({

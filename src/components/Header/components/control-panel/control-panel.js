@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { actionSetCategory } from '../../../../action';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionLogout, actionSetCategory } from '../../../../action';
+import { selectUser } from '../../../../selectors';
 import { BasketIcon } from '../basket-icon/basket-icon';
 import { Button } from '../../../button/button';
 import { CATEGORIES } from '../../../../constants';
@@ -8,6 +9,12 @@ import styles from './controlPanel.module.css';
 
 export const ControlPanel = () => {
 	const dispatch = useDispatch();
+	const user = useSelector(selectUser);
+	const logout = () => {
+		dispatch(actionLogout())
+		sessionStorage.removeItem('userData');
+	}
+
 	return (
 		<div className={styles.controlPanelContainer}>
 			<div className={styles.rightAligned}>
@@ -25,15 +32,24 @@ export const ControlPanel = () => {
 			<BasketIcon />
 
 			<div className={styles.rightAligned}>
-				<Link to={'/login'}>
-					<Button>
-						<i
-							className={`fa fa-user-o ${styles.login_icon}`}
-							aria-hidden="true"
-						></i>
-						Войти
-					</Button>
-				</Link>
+				{!user.error ? (
+					<div>
+						<span className={styles.login}>{user?.user?.login}</span>
+							<Button onClick={logout}>
+								Выйти
+							</Button>
+					</div>
+				) : (
+					<Link to={'/login'}>
+						<Button>
+							<i
+								className={`fa fa-user-o ${styles.login_icon}`}
+								aria-hidden="true"
+							></i>
+							Войти
+						</Button>
+					</Link>
+				)}
 			</div>
 		</div>
 	);

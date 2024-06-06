@@ -11,7 +11,6 @@ export const changeProduct = (data, payload, type) => {
 	} else if (type === 'DELETE') {
 		return data.filter((product) => product.id !== payload);
 	} else if (type === 'ADD') {
-		console.log(payload)
 		data.push(payload);
 		return data;
 	}

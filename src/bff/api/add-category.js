@@ -1,7 +1,7 @@
 import { transformCategory } from '../transformes';
 
 export const addCategory = (data) =>
-	fetch('http://localhost:4000/store/categories', {
+	fetch('/categories', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
 		body: JSON.stringify({

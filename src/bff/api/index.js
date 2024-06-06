@@ -6,3 +6,6 @@ export * from './delete-product';
 export * from './add-product';
 export * from './add-category';
 export * from './delete-category';
+export * from './registration';
+export * from './authorization';
+export * from './logout';

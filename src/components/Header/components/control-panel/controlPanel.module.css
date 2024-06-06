@@ -29,3 +29,8 @@
 	transform: 0.15s;
 	color: rgb(255, 0, 0);
 }
+
+.login {
+	margin: 0 10px 10px 0;
+	font-size: 24px;
+}

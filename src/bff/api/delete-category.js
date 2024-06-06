@@ -1,4 +1,4 @@
 export const deleteCategory = (id) =>
-	fetch(`http://localhost:4000/store/categories/${id}`, {
+	fetch(`/categories/${id}`, {
 		method: 'DELETE',
 	});

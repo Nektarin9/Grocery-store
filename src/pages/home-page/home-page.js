@@ -28,7 +28,7 @@ export const HomePage = () => {
 	useEffect(() => {
 		dispatch(actionGetСatalogСategories());
 		dispatch(actionClearProduct())
-	}, [dispatch]);
+	}, [dispatch, catrgory]);
 
 	/*Поиск*/
 

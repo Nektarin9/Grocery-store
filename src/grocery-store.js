@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { actionGetAllProducts } from './action';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionAuthorization, actionGetAllProducts, actionSaveUser } from './action';
 import { Header, Footer } from './components';
 import {
 	HomePage,
@@ -16,11 +16,22 @@ import {
 	Registration,
 } from './pages';
 import styles from './groceryStore.module.css';
+import { selectUser } from './selectors';
+import { ROLE } from './constants';
 
 export const GroceryStore = () => {
 	const dispatch = useDispatch();
+	const user = useSelector(selectUser)
 	useEffect(() => {
 		dispatch(actionGetAllProducts());
+	}, [dispatch]);
+	useLayoutEffect(() => {
+		const currentUserDataJSON = sessionStorage.getItem('userData');
+		if (!currentUserDataJSON) {
+			return;
+		}
+		const currentUserData = JSON.parse(currentUserDataJSON);
+		dispatch(actionSaveUser({ ...currentUserData }));
 	}, [dispatch]);
 
 	return (
@@ -35,7 +46,7 @@ export const GroceryStore = () => {
 						<Route path="/basket" element={<Basket />} />
 						<Route path="/admin" element={<div>Админ панель</div>} />
 						<Route path="/product/:product_id" element={<Product />} />
-						<Route path="/product/:product_id/edit" element={<Editing />} />
+						<Route path="/product/:product_id/edit" element={user?.user?.roleId === ROLE.ADMIN ? <Editing /> : <div>Ошибка</div>} />
 						<Route path="/add" element={<Addition />} />
 						<Route path="/editing-category" element={<CategoryEditor />} />
 						<Route path="*" element={<div>Ошибка</div>} />

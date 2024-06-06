@@ -1,12 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BackButton, InputEdit, Button, ErrorMessage } from '../../components';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { authorization } from '../../bff/api';
+import {
+	actionAuthorization,
+	actionGetStatusEditing,
+	actionResetStateRegist,
+	actionUpdateStatusProduct,
+} from '../../action';
+import { selectUser } from '../../selectors';
 import styles from './authorization.module.css';
-import { useResetForm } from '../../hooks';
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
 
 const authFormSchema = yup.object().shape({
 	login: yup
@@ -40,21 +47,36 @@ export const Authorization = () => {
 		resolver: yupResolver(authFormSchema),
 	});
 	const [serverError, setServerError] = useState('');
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
+	const user = useSelector(selectUser);
+	console.log(user);
+
+	useEffect(() => {
+		if (!user.error) {
+			navigate('/');
+			dispatch(actionUpdateStatusProduct(`Добро пожаловать ${user.user.login}`));
+			dispatch(actionGetStatusEditing(true));
+			sessionStorage.setItem("userData", JSON.stringify(user))
+
+		}
+	}, [dispatch, navigate, user, user.error, user?.user?.login]);
 
 	const onSubmit = ({ login, password }) => {
-		console.log(login);
-		console.log(password);
+		dispatch(actionAuthorization(login, password));
 	};
 	const formError = errors?.login?.message || errors?.password?.message;
 
 	const errorMessage = formError || serverError;
-	console.log(errorMessage);
+
+	useEffect(() => {
+		dispatch(actionResetStateRegist(true));
+	}, [dispatch]);
 
 	return (
 		<>
+			{user.error === "Проверьте учетые данные" ? <div className={styles.error}><ErrorMessage>{user.error}</ErrorMessage></div> : <></>}
 			<BackButton />
-
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
 				<h2 className={styles.h2_text}>Вход и регистрация</h2>
 				{errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}

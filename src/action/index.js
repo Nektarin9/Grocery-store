@@ -19,3 +19,8 @@ export * from './add-category.js';
 export * from './delete-category.js';
 export * from './clear-product.js';
 export * from './baskter-delete.js';
+export * from './authorization.js';
+export * from './registration.js';
+export * from './reset-state-regist.js';
+export * from './logout.js';
+export * from './save-user.js';

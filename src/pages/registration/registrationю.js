@@ -4,9 +4,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useResetForm } from '../../hooks';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './registration.module.css';
-import { Navigate } from 'react-router-dom';
+import { NavLink, Navigate, useNavigate } from 'react-router-dom';
+import { registration } from '../../bff/api';
+import {
+	actionGetStatusEditing,
+	actionRegistration,
+	actionUpdateStatusProduct,
+} from '../../action';
+import { selectRegistration } from '../../selectors';
 
 const regFormSchema = yup.object().shape({
 	login: yup
@@ -35,7 +42,6 @@ export const Registration = () => {
 	const {
 		register,
 		handleSubmit,
-		reset,
 		formState: { errors },
 	} = useForm({
 		defaultValues: {
@@ -46,16 +52,33 @@ export const Registration = () => {
 		resolver: yupResolver(regFormSchema),
 	});
 	const [serverError, setServerError] = useState(null);
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const errorReg = useSelector(selectRegistration);
 	const formError =
 		errors?.login?.message || errors?.password?.message || errors?.passcheck?.message;
 
 	const errorMessage = formError || serverError;
+
+	useEffect(() => {
+		if (!errorReg) {
+			navigate('/login');
+			dispatch(actionUpdateStatusProduct('Вы успешно зарегестрированы'));
+			dispatch(actionGetStatusEditing(true));
+		}
+	}, [dispatch, navigate, errorReg]);
+
 	const onSubmit = ({ login, password }) => {
-		console.log(serverError);
+		dispatch(actionRegistration(login, password));
 	};
 
 	return (
 		<>
+			{errorReg === 'Похоже такой пользователь уже существует' ? (
+				<div className={styles.error}><ErrorMessage>{errorReg}</ErrorMessage></div>
+			) : (
+				<></>
+			)}
 			<BackButton />
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
 				<h2 className={styles.h2_text}>Ррегистрация</h2>

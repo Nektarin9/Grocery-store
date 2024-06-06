@@ -15,3 +15,10 @@
 .input_container {
 	margin: 20px auto;
 }
+
+.error {
+	position: absolute;
+	text-align: center;
+	right: 226px;
+    top: 9px;
+}
