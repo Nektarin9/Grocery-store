@@ -1,0 +1,14 @@
+
+.error_h1 {
+	margin: 50px auto;
+	text-align: center;
+	font-size: 100px;
+	letter-spacing: 10px;
+	font-weight: 500;
+}
+
+.error_text {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 500;
+}
