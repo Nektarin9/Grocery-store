@@ -11,10 +11,17 @@ export const basketReducer = (state = initialbasketReducer, action) => {
 	const { type, payload } = action;
 	switch (type) {
 		case ACTION_TYPE.ADD_PRODUCT_BASKET: {
-			return {
-				...state,
-				productsBasket: [...state.productsBasket, payload],
-			};
+			if (Array.isArray(payload)) {
+				return {
+					...state,
+					productsBasket: [...payload],
+				};
+			} else {
+				return {
+					...state,
+					productsBasket: [...state.productsBasket, payload],
+				};
+			}
 		}
 		case ACTION_TYPE.UPDATE_INPUT_PLUS: {
 			changeProductBasket(state.productsBasket, payload, PLUS);

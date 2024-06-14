@@ -18,8 +18,9 @@ import {
 import { changeFormatPrice } from '../../utils';
 import { Loader, BackButton, BtnAndInputCounter, Button } from '../../components';
 import { CompositionWidget } from './components';
-import styles from './product.module.css';
 import { accessCheck } from '../../utils/access-check';
+import styles from './product.module.css';
+
 
 export const Product = () => {
 	const { product_id } = useParams();

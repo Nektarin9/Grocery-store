@@ -1,7 +1,8 @@
-import React, { useLayoutEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useLayoutEffect } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionSaveUser } from './action';
+import { actionAddProductsBasket, actionSaveUser } from './action';
 import { Header, Footer } from './components';
 import {
 	HomePage,
@@ -15,14 +16,22 @@ import {
 	ErrorPage,
 } from './pages';
 import styles from './groceryStore.module.css';
-import { selectUser } from './selectors';
+import { selectAddProducts, selectUser } from './selectors';
 import { accessCheck } from './utils/access-check';
 
 export const GroceryStore = () => {
+	const productsBasket = useSelector(selectAddProducts);
 	const dispatch = useDispatch();
 	const user = useSelector(selectUser);
 
+	const savedLocalStorageBasket = JSON.parse(localStorage.getItem('productsBasket'));
+
 	useLayoutEffect(() => {
+		dispatch(
+			actionAddProductsBasket(
+				savedLocalStorageBasket ? savedLocalStorageBasket : [],
+			),
+		);
 		const currentUserDataJSON = sessionStorage.getItem('userData');
 		if (!currentUserDataJSON) {
 			return;
@@ -30,6 +39,10 @@ export const GroceryStore = () => {
 		const currentUserData = JSON.parse(currentUserDataJSON);
 		dispatch(actionSaveUser({ ...currentUserData }));
 	}, [dispatch]);
+
+	useEffect(() => {
+		localStorage.setItem('productsBasket', JSON.stringify(productsBasket));
+	}, [productsBasket]);
 
 	return (
 		<>
