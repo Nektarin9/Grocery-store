@@ -118,8 +118,3 @@
 	cursor: pointer;
 }
 
-.loader_container {
-	margin-top: 100px;
-	display: flex;
-	justify-content: center;
-}

@@ -1,19 +1,23 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionLogout, actionSetCategory } from '../../../../action';
+import {
+	actionBtnSearch,
+	actionGetInputSearch,
+	actionLogout,
+	actionSetCategory,
+} from '../../../../action';
 import { selectUser } from '../../../../selectors';
 import { BasketIcon } from '../basket-icon/basket-icon';
 import { Button } from '../../../button/button';
-import { CATEGORIES } from '../../../../constants';
 import styles from './controlPanel.module.css';
 
 export const ControlPanel = () => {
 	const dispatch = useDispatch();
 	const user = useSelector(selectUser);
 	const logout = () => {
-		dispatch(actionLogout())
+		dispatch(actionLogout());
 		sessionStorage.removeItem('userData');
-	}
+	};
 
 	return (
 		<div className={styles.controlPanelContainer}>
@@ -21,9 +25,11 @@ export const ControlPanel = () => {
 				<Link className={styles.menu} to={'/'}>
 					<h2
 						className={styles.menu_text}
-						onClick={() =>
-							dispatch(actionSetCategory(CATEGORIES.allProducts))
-						}
+						onClick={() => {
+							dispatch(actionGetInputSearch(''));
+							dispatch(actionSetCategory(''));
+							dispatch(actionBtnSearch());
+						}}
 					>
 						Все товары
 					</h2>
@@ -35,9 +41,7 @@ export const ControlPanel = () => {
 				{!user.error ? (
 					<div>
 						<span className={styles.login}>{user?.user?.login}</span>
-							<Button onClick={logout}>
-								Выйти
-							</Button>
+						<Button onClick={logout}>Выйти</Button>
 					</div>
 				) : (
 					<Link to={'/login'}>

@@ -1,4 +1,3 @@
- export const selectGetCategory = (state) => {
+export const selectGetCategory = (state) => {
 	return state.catalogReducer.category;
-
- }
+};

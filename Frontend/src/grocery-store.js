@@ -1,8 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionGetAllProducts, actionSaveUser } from './action';
+import { actionSaveUser } from './action';
 import { Header, Footer } from './components';
 import {
 	HomePage,
@@ -13,7 +12,7 @@ import {
 	CategoryEditor,
 	Authorization,
 	Registration,
-	ErrorPage
+	ErrorPage,
 } from './pages';
 import styles from './groceryStore.module.css';
 import { selectUser } from './selectors';
@@ -22,9 +21,7 @@ import { accessCheck } from './utils/access-check';
 export const GroceryStore = () => {
 	const dispatch = useDispatch();
 	const user = useSelector(selectUser);
-	useEffect(() => {
-		dispatch(actionGetAllProducts());
-	}, [dispatch]);
+
 	useLayoutEffect(() => {
 		const currentUserDataJSON = sessionStorage.getItem('userData');
 		if (!currentUserDataJSON) {
@@ -48,7 +45,7 @@ export const GroceryStore = () => {
 								accessCheck(user, 'AUTHORRIZED') ? (
 									<Registration />
 								) : (
-									<ErrorPage/>
+									<ErrorPage />
 								)
 							}
 						/>
@@ -58,21 +55,13 @@ export const GroceryStore = () => {
 						<Route
 							path="/product/:product_id/edit"
 							element={
-								accessCheck(user, 'ADMIN') ? (
-									<Editing />
-								) : (
-									<ErrorPage/>
-								)
+								accessCheck(user, 'ADMIN') ? <Editing /> : <ErrorPage />
 							}
 						/>
 						<Route
 							path="/add"
 							element={
-								accessCheck(user, 'ADMIN') ? (
-									<Addition />
-								) : (
-									<ErrorPage/>
-								)
+								accessCheck(user, 'ADMIN') ? <Addition /> : <ErrorPage />
 							}
 						/>
 						<Route
@@ -81,11 +70,11 @@ export const GroceryStore = () => {
 								accessCheck(user, 'ADMIN') ? (
 									<CategoryEditor />
 								) : (
-									<ErrorPage/>
+									<ErrorPage />
 								)
 							}
 						/>
-						<Route path="*" element={<ErrorPage/>} />
+						<Route path="*" element={<ErrorPage />} />
 					</Routes>
 					{accessCheck(user, 'ADMIN') ? (
 						<NavLink to={'/add'} className={styles.addProduct}>

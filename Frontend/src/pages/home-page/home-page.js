@@ -3,29 +3,22 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
 	selectGetCategory,
-	selectLoadingProducts,
-	selectProductSearch,
 	selectAllProducts,
 	selectUser,
 } from '../../selectors';
-import { actionGetСatalogСategories, actionClearProduct } from '../../action';
-import { producSearch } from '../../utils/produc-search';
-import { useState } from 'react';
-import { Loader } from '../../components';
+import {
+	actionGetСatalogСategories,
+	actionClearProduct,
+	actionSort,
+} from '../../action';
 import { NavLink } from 'react-router-dom';
 import styles from './homePage.module.css';
 import { accessCheck } from '../../utils/access-check';
 
 export const HomePage = () => {
-	const [isSort, setIsSort] = useState(false);
 	const catrgory = useSelector(selectGetCategory);
-
-	const productСatalog = useSelector(selectLoadingProducts);
-	const inputSearch = useSelector(selectProductSearch);
 	const allProducts = useSelector(selectAllProducts);
-	const selectCategory = useSelector(selectGetCategory);
 	const user = useSelector(selectUser);
-
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -35,18 +28,9 @@ export const HomePage = () => {
 
 	/*Поиск*/
 
-	const products = producSearch(
-		inputSearch,
-		allProducts,
-		productСatalog,
-		selectCategory,
-	);
-
-	if (isSort) {
-		products.sort((a, b) => b.price - a.price);
-	} else {
-		products.sort((a, b) => a.price - b.price);
-	}
+	const sort = () => {
+		dispatch(actionSort());
+	};
 
 	return (
 		<>
@@ -68,20 +52,19 @@ export const HomePage = () => {
 			</ul>
 			<div className={styles.products_container}>
 				<div className={styles.sort_container}>
-					<h2>{catrgory}</h2>
-					<p className={styles.p_sort} onClick={() => setIsSort(!isSort)}>
+					<h2>{catrgory ? catrgory : "Все продукты"}</h2>
+					<p
+						className={styles.p_sort}
+						onClick={() => {
+							sort();
+						}}
+					>
 						<i className="fa fa-sort-amount-desc" aria-hidden="true" />
 					</p>
 				</div>
-				{!!products.length ? (
-					<ul className={styles.products_list}>
-						<Products products={products} />
-					</ul>
-				) : (
-					<div className={styles.loader_container}>
-						<Loader />
-					</div>
-				)}
+				<ul className={styles.products_list}>
+					<Products allProducts={allProducts} />
+				</ul>
 			</div>
 		</>
 	);

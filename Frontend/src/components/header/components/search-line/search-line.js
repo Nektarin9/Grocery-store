@@ -1,43 +1,52 @@
 import { useDispatch } from 'react-redux';
-import { actionGetInputSearch } from '../../../../action';
+import {
+	actionBtnSearch,
+	actionGetAllProducts,
+	actionGetInputSearch,
+} from '../../../../action';
 import { useSelector } from 'react-redux';
-import { selectGetCategory, selectProductSearch } from '../../../../selectors';
-import { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { selectProductSearch, selectSort } from '../../../../selectors';
+import { useCallback, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { debounce } from './utils';
 import styles from './searchLine.module.css';
 
 export const SearchLine = () => {
 	const dispatch = useDispatch();
-	const selectCategory = useSelector(selectGetCategory);
+	const navigate = useNavigate();
 	const inputSearch = useSelector(selectProductSearch);
 
-	/* Записываем текст фильтра */
-	const productSearch = (event) => {
-		const { target } = event;
-		if (target.value) {
-			dispatch(actionGetInputSearch(target.value));
-		} else {
-			dispatch(actionGetInputSearch(''));
-		}
+	const debouncedOnChange = useCallback(
+		debounce(() => {
+			// Здесь может быть любой код, который вы хотите выполнить с задержкой
+			dispatch(actionBtnSearch());
+		}, 500),
+		[],
+	);
+
+	const handleSubmit = (e) => {
+		e.preventDefault(); // Предотвращаем стандартное поведение формы
+		// Здесь ваш код для обработки отправки формы
+		navigate('/');
 	};
 
-	useEffect(() => {
-		dispatch(actionGetInputSearch(''));
-	}, [selectCategory, dispatch]);
 
 	return (
-		<div className={styles.searchContainer}>
+		<form className={styles.searchContainer} onSubmit={handleSubmit}>
 			<input
-				onChange={productSearch}
-				className={styles.search}
+				onChange={(e) => {
+					debouncedOnChange(e.target.value);
+					dispatch(actionGetInputSearch(e.target.value));
+				}}
 				value={inputSearch}
+				className={styles.search}
 				type="text"
 				placeholder="Начните поиск"
 				maxLength={35}
 			></input>
-			<NavLink to={"/"} className={styles.searchIcon}>
+			<button type="submit" className={styles.searchIcon}>
 				<i className={`fa fa-neuter`} aria-hidden="true"></i>
-			</NavLink>
-		</div>
+			</button>
+		</form>
 	);
 };

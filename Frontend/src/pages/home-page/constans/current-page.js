@@ -1,1 +1,1 @@
-export const CURRENT_PAGE = 16
+export const CURRENT_PAGE = 12

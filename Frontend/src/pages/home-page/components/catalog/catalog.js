@@ -1,8 +1,9 @@
 import { selectGetCategory, selectAllСategories } from '../../../../selectors';
-import { actionSetCategory } from '../../../../action';
+import {  actionGetInputSearch, actionSetCategory } from '../../../../action';
 import { useSelector, useDispatch } from 'react-redux';
 import { Loader } from '../../../../components';
 import styles from './catalog.module.css';
+
 
 export const Catalog = () => {
 	const dispatch = useDispatch();
@@ -11,8 +12,11 @@ export const Catalog = () => {
 	/* Выбранная категория */
 	const selectCategory = useSelector(selectGetCategory);
 	const selectProduct = (category) => {
+		dispatch(actionGetInputSearch(''));
 		dispatch(actionSetCategory(category));
 	};
+
+
 
 	return (
 		<>

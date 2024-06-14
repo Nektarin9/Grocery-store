@@ -82,3 +82,10 @@
 	font-weight: 400;
 	color: rgb(163, 163, 163);
 }
+.loader_container {
+	margin: auto;
+	font-size: 18px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}

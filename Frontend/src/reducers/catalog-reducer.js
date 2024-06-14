@@ -3,11 +3,10 @@ import { ACTION_TYPE } from '../action/type';
 
 export const initialCatalogReducer = {
 	allСategories: [],
-	category: 'Все продукты',
+	category: '',
 	product: {},
 	numberProducts: 0,
-	productSearch: '',
-	allProducts: [],
+	allProducts: {},
 };
 
 export const catalogReducer = (state = initialCatalogReducer, action) => {
@@ -62,12 +61,6 @@ export const catalogReducer = (state = initialCatalogReducer, action) => {
 			};
 		}
 
-		case ACTION_TYPE.GET_INPUT_SEARCH: {
-			return {
-				...state,
-				productSearch: payload,
-			};
-		}
 		case ACTION_TYPE.GET_PRODUCT: {
 			return {
 				...state,
@@ -77,23 +70,14 @@ export const catalogReducer = (state = initialCatalogReducer, action) => {
 		case ACTION_TYPE.CLEAR_PRODUCT: {
 			if (state.product?.id) {
 				for (let key in state.product) {
-					// Удаляем каждое свойство из объекта
 					delete state.product[key];
 				}
 			}
-				return {
-					...state,
-				};
-		}
-
-		/*
-		case ACTION_TYPE.GET_LOADING_PRODUCTS: {
 			return {
 				...state,
-				loadingProducts: payload,
 			};
 		}
-		*/
+
 		default:
 			return state;
 	}

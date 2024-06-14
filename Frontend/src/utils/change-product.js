@@ -2,7 +2,6 @@ export const changeProduct = (data, payload, type) => {
 	if (type === 'UPDATE') {
 		const copyData = [...data];
 		copyData.forEach(({ id }, index) => {
-
 			if (id === payload.id) {
 				copyData[index] = { ...payload };
 			}
