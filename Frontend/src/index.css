@@ -56,3 +56,6 @@ li {
   ::-webkit-scrollbar {
 	width: 0;
   }
+  img {
+	user-select: none;
+  }

@@ -15,6 +15,14 @@
 .left_container {
 	width: 600px;
 }
+
+.slider_container {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+
 .h2_title {
 	margin-bottom: 40px;
 	font-size: 28px;
@@ -29,7 +37,7 @@ h3 {
 	color: rgba(9, 9, 9, 0.841);
 }
 
-img {
+.img_product {
 	width: 100%;
 	max-width: 600px;
 	border-radius: 1rem;

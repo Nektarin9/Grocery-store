@@ -16,7 +16,7 @@ export const Addition = () => {
 	const allCategories = useSelector(selectAllСategories);
 	const [changeCategory, setСhangeCategory] = useState('');
 	const [changeTitle, setСhangeTitle] = useState('');
-	const [changeInputUrl, setСhangeInputUrl] = useState('');
+	const [changeInputUrl, setСhangeInputUrl] = useState([""]);
 	const [changeContent, setСhangeContent] = useState('');
 	const [changePrice, setСhangePrice] = useState('');
 	const [changeQuantity, setСhangeQuantity] = useState('');
@@ -38,6 +38,7 @@ export const Addition = () => {
 	}, [dispatch, allCategories]);
 
 	const addProduct = () => {
+		setСhangeInputUrl(() => changeInputUrl.filter((item) => item !== ''));
 		const data = {
 			changeCategory,
 			changeTitle,
@@ -56,7 +57,6 @@ export const Addition = () => {
 		dispatch(actionUpdateStatusProduct('Товар успешно добавлен'));
 		dispatch(actionGetStatusEditing(true));
 	};
-
 	return (
 		<>
 			<BackButton />

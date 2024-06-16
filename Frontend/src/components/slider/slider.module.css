@@ -1,0 +1,39 @@
+.swiper {
+	width: 100%;
+	height: 100%;
+	background-color: brown;
+  }
+
+  .swiper_slide {
+	cursor: pointer;
+	background: #fff;
+	/* Center slide text vertically */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  @keyframes ani {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+  .img_size {
+	cursor: pointer;
+	width: 185px;
+	border-radius: 5px;
+  }
+ .border {
+	border: 2px solid rgba(255, 255, 255, 0);
+	animation: ani 1.5s forwards;
+
+ }
+ .border_red {
+	border: 2px solid rgba(167, 0, 0, 0.929);
+	animation: ani 1.5s forwards;
+
+ }

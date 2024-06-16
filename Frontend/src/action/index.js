@@ -27,3 +27,4 @@ export * from './current-page.js';
 export * from './loading-products.js';
 export * from './btn-search.js';
 export * from './sort.js';
+export * from './slider-img.js';

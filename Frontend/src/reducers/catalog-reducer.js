@@ -1,4 +1,4 @@
-import { changeProduct } from '../utils';
+import { changeProduct, transformObject } from '../utils';
 import { ACTION_TYPE } from '../action/type';
 
 export const initialCatalogReducer = {
@@ -6,34 +6,40 @@ export const initialCatalogReducer = {
 	category: '',
 	product: {},
 	numberProducts: 0,
-	allProducts: {},
+	loadingProducts: [],
 };
 
 export const catalogReducer = (state = initialCatalogReducer, action) => {
 	const { type, payload } = action;
 	switch (type) {
-		case ACTION_TYPE.GET_ALL_PRODUCTS: {
+		case ACTION_TYPE.GET_LOADING_PRODUCTS: {
 			return {
 				...state,
-				allProducts: payload,
+				loadingProducts: payload,
 			};
 		}
 		case ACTION_TYPE.UPDATE_PRODUCT: {
 			return {
 				...state,
-				allProducts: [...changeProduct(state.allProducts, payload, 'UPDATE')],
+				loadingProducts: [
+					...changeProduct(state.loadingProducts, payload, 'UPDATE'),
+				],
 			};
 		}
 		case ACTION_TYPE.DELETE_PRODUCT: {
 			return {
 				...state,
-				allProducts: [...changeProduct(state.allProducts, payload, 'DELETE')],
+				loadingProducts: [
+					...changeProduct(state.loadingProducts, payload, 'DELETE'),
+				],
 			};
 		}
 		case ACTION_TYPE.ADD_PRODUCT: {
 			return {
 				...state,
-				allProducts: [...changeProduct(state.allProducts, payload, 'ADD')],
+				loadingProducts: [
+					...changeProduct(state.loadingProducts, payload, 'ADD'),
+				],
 			};
 		}
 		case ACTION_TYPE.CATEGORY_SIDE_MENU: {
@@ -62,6 +68,16 @@ export const catalogReducer = (state = initialCatalogReducer, action) => {
 		}
 
 		case ACTION_TYPE.GET_PRODUCT: {
+			if (!payload.imageUrl.length) {
+				payload.imageUrl = [
+					{
+						imgSrc: 'https://sun1-19.userapi.com/s/v1/ig2/HEYwyGgppTiSOFuM2vg1h6W2aNCCVC6rXoiL3rGwy8q7dM_E9kejkCi1pODwNE-eDrlyt4VEEzmD_sbeaBu9Qcbf.jpg?size=400x400&quality=95&crop=467,154,665,665&ava=1',
+						target: true,
+					},
+				];
+			} else {
+				payload.imageUrl = transformObject(payload);
+			}
 			return {
 				...state,
 				product: payload,

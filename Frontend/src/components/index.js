@@ -7,3 +7,4 @@ export * from './button/button.js';
 export * from './input-edit/input-edit.js';
 export * from './select-categories/select-categories.js';
 export * from './error-message/error-message.js';
+export * from './slider/slider.js';

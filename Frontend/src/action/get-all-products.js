@@ -8,7 +8,7 @@ export const actionGetAllProducts =
 			`/products?_&limit=${limit}&search=${search}&sortDirection=${sortDirection}&category=${category}`,
 		).then((products) => {
 			dispatch({
-				type: ACTION_TYPE.GET_ALL_PRODUCTS,
+				type: ACTION_TYPE.GET_LOADING_PRODUCTS,
 				payload: products.products,
 			});
 		});

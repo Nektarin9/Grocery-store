@@ -35,7 +35,7 @@ export const Basket = () => {
 					<div id={id} key={id} className={styles.product_contaner}>
 						<Link to={`/product/${id}`}>
 							<img
-								src={imageUrl}
+								src={imageUrl[0].imgSrc}
 								className={styles.img_product}
 								alt={title}
 							></img>

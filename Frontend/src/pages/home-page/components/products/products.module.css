@@ -23,6 +23,7 @@
 	color: rgb(255, 0, 0);
 	transform: 0.3s;
 	transition: 0.3s;
+
 }
 .img_products {
 	display: block;
@@ -30,7 +31,9 @@
 	width: 100%;
 	border-radius: 1rem;
 
+
 }
+
 
 .scale {
     display: inline-block; /* Строчно-блочный элемент */

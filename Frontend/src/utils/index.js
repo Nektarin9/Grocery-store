@@ -5,3 +5,4 @@ export * from './find-product';
 export * from './change-product';
 export * from './access-check';
 export * from './requests';
+export * from './transform-object';

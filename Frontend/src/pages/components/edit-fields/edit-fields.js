@@ -1,5 +1,4 @@
-
-import { InputEdit } from '../../../components';
+import { Button, InputEdit } from '../../../components';
 import { InputBlockCharacteristics } from './components';
 import { SelectCategories } from '../../../components';
 import styles from './edit-fields.module.css';
@@ -27,12 +26,26 @@ export const EditFields = ({
 	changeGrams,
 	setСhangeGrams,
 }) => {
+	const addInput = () => {
+		setСhangeInputUrl([...changeInputUrl, '']); // Добавляем пустую строку в массив
+	};
+	// Функция для обработки изменения значения инпута
+	const handleInputChange = (index, value) => {
+		const newValues = [...changeInputUrl];
+		newValues[index] = value;
+		setСhangeInputUrl(newValues);
+	};
+
+
 
 
 	return (
 		<div className={styles.container}>
 			<h3>Категория</h3>
-			<SelectCategories changeCategory={changeCategory} setСhangeCategory={setСhangeCategory}/>
+			<SelectCategories
+				changeCategory={changeCategory}
+				setСhangeCategory={setСhangeCategory}
+			/>
 
 			<h3>Название товара</h3>
 			<InputEdit
@@ -42,12 +55,22 @@ export const EditFields = ({
 				placeholder="Имя"
 			/>
 			<h3>Image url</h3>
-			<InputEdit
-				value={changeInputUrl}
-				setValue={setСhangeInputUrl}
-				width={'600px'}
-				placeholder="Image url"
-			/>
+			<Button onClick={addInput}>Добавить url</Button>
+			<div>
+				{changeInputUrl.map((value, index) => (
+					<div key={index}>
+						<p>№ {index + 1}</p>
+						<InputEdit
+							value={value}
+							width={'600px'}
+							btnDelete={true}
+							onChange={(e) => handleInputChange(index, e.target.value)}
+						/>
+					</div>
+				))}
+
+			</div>
+
 			<h3>О товаре</h3>
 			<textarea
 				className={styles.content}

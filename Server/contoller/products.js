@@ -54,6 +54,8 @@ async function addProducts({
   image_url,
   content,
 }) {
+  image_url = [...image_url.filter((item) => item.trim() !== '')]
+  
   const newProduct = await Products.create({
     category,
     title,
@@ -76,6 +78,8 @@ async function deleteProducts(id) {
 }
 
 async function updateProduct(id, data) {
+  const image_url =  [...data.image_url.filter((item) => item.trim() !== '')]
+
   const updatedProduct = {
     category: data.category,
     title: data.title,
@@ -86,11 +90,10 @@ async function updateProduct(id, data) {
     carbohydrates: data.carbohydrates,
     calorie: data.calorie,
     number_grams: data.number_grams,
-    image_url: data.image_url,
+    image_url: image_url,
     content: data.content,
     _id: id,
   };
-
   await Products.updateOne(
     { _id: id }, // Используем _id вместо id
     { $set: updatedProduct }

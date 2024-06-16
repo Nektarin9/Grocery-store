@@ -13,7 +13,7 @@ const ProductsSchema = mongoose.Schema({
 		type: String,
 	},
 	image_url: {
-		type: String,
+		type: Array,
 	},
 	number_grams: {
 		type: String,

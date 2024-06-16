@@ -8,12 +8,13 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { actionCurrentPage, actionGetAllProducts } from '../../../../action';
-import styles from './products.module.css';
 import { NavLink } from 'react-router-dom';
 import { request } from '../../../../utils';
 import { Loader } from '../../../../components';
+import styles from './products.module.css';
 
-export const Products = ({ allProducts }) => {
+
+export const Products = ({ loadingProducts }) => {
 	const currentPage = useSelector(selectCurrentPage);
 	const [isLoading, setIsLoading] = useState(false);
 	const [numberGoods, setNumberGoods] = useState(null);
@@ -70,14 +71,14 @@ export const Products = ({ allProducts }) => {
 
 	return (
 		<>
-			{!!allProducts.length ? (
-				allProducts.map(({ id, imageUrl, price, title, numberGrams }) => {
+			{!!loadingProducts.length ? (
+				loadingProducts.map(({ id, imageUrl, price, title, numberGrams }) => {
 					return (
 						<NavLink key={id} to={`/product/${id}`}>
 							<li id={id} className={`${styles.products} ${styles.scale}`}>
 								<img
 									className={`${styles.img_products} ${styles.scale}`}
-									src={imageUrl}
+									src={imageUrl[0]}
 									alt={title}
 								></img>
 								<p className={styles.price}>{`${price} ₽`}</p>

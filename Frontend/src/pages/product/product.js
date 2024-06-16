@@ -16,11 +16,10 @@ import {
 	actionGetStatusEditing,
 } from '../../action';
 import { changeFormatPrice } from '../../utils';
-import { Loader, BackButton, BtnAndInputCounter, Button } from '../../components';
+import { Loader, BackButton, BtnAndInputCounter, Button, Slider } from '../../components';
 import { CompositionWidget } from './components';
 import { accessCheck } from '../../utils/access-check';
 import styles from './product.module.css';
-
 
 export const Product = () => {
 	const { product_id } = useParams();
@@ -32,6 +31,7 @@ export const Product = () => {
 	const productsBasket = useSelector(selectAddProducts);
 	const user = useSelector(selectUser);
 
+	const [img, setImg] = useState(null)
 	const dispatch = useDispatch();
 	useEffect(() => {
 		if (product) {
@@ -65,6 +65,7 @@ export const Product = () => {
 			setDuplicationError(true);
 		}
 	};
+
 	return (
 		<>
 			<BackButton />
@@ -85,7 +86,15 @@ export const Product = () => {
 					<p className={styles.p_category}>{product.category}</p>
 					<div className={styles.container}>
 						<div className={styles.left_container}>
-							<img src={product.imageUrl} alt={product.title}></img>
+							<img
+								className={styles.img_product}
+								src={img ? img : product.imageUrl[0].imgSrc}
+								alt={product.title}
+							></img>
+							<div className={styles.slider_container}>
+								<Slider imageUrl={product.imageUrl}
+								setImg ={setImg}></Slider>
+							</div>
 							<h3>О товаре</h3>
 							<p className={styles.p_gram}>{product.numberGrams} г</p>
 							<div className={styles.text_content}>{product.content}</div>

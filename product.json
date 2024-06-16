@@ -1,36 +1,8 @@
-{
-  "users": [
-    {
-      "id": "001",
-      "login": "Vladislav",
-      "password": "qwerty123",
-      "register_at": "2024.02.25",
-      "role_id": 0
-    }
-  ],
-  "roles": [
-    {
-      "id": 0,
-      "name": "Администратор"
-    },
-    {
-      "id": 1,
-      "name": "Модератор"
-    },
-    {
-      "id": 2,
-      "name": "Читатель"
-    },
-    {
-      "id": 3,
-      "name": "Гость"
-    }
-  ],
-  "products": [
+[
     {
       "category": "Сладости",
       "title": "Ирис с орехом кешью",
-      "priсe": "103",
+      "price": 103,
       "quantity": "423",
       "protein": "3.7",
       "fats": "8.8",
@@ -44,7 +16,7 @@
     {
       "category": "Сыры",
       "title": "Сыр Моцарелла Galbani 45%",
-      "priсe": "199",
+      "price": 199,
       "quantity": "355",
       "protein": "16.5",
       "fats": "17",
@@ -58,7 +30,7 @@
     {
       "category": "Хлеб и выпечка",
       "title": "Пончик Умный Пекарь шоколадный с грецким орехом",
-      "priсe": "207",
+      "price": 207,
       "quantity": "424",
       "protein": "3.8",
       "fats": "28.8",
@@ -72,7 +44,7 @@
     {
       "category": "Сыры",
       "title": "Сыр Natura Сливочный 45% нарезка",
-      "priсe": "453",
+      "price": 453,
       "quantity": "244",
       "protein": "26",
       "fats": "45",
@@ -86,7 +58,7 @@
     {
       "category": "Хлеб и выпечка",
       "title": "Кексы-мини ванильно-сливочные",
-      "priсe": "283",
+      "price": 283,
       "quantity": "224",
       "protein": "5.5",
       "fats": "24.5",
@@ -100,7 +72,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Огурцы корнишоны",
-      "priсe": "216",
+      "price": 216,
       "quantity": "323",
       "protein": "0.8",
       "fats": "0.1",
@@ -114,7 +86,7 @@
     {
       "category": "Хлеб и выпечка",
       "title": "Лаваш Армянский тандырный, нарезка",
-      "priсe": "78",
+      "price": 78,
       "quantity": "132",
       "protein": "9.8",
       "fats": "1.2",
@@ -128,7 +100,7 @@
     {
       "category": "Сыры",
       "title": "Сыр полутвердый из козьего молока \"Каприно Романо\"",
-      "priсe": 445,
+      "price": 445,
       "quantity": 100,
       "protein": "-",
       "fats": "-",
@@ -142,7 +114,7 @@
     {
       "category": "Хлеб и выпечка",
       "title": "Коржик молочный",
-      "priсe": "70",
+      "price": 70,
       "quantity": 100,
       "protein": "5",
       "fats": "9",
@@ -156,7 +128,7 @@
     {
       "category": "Сыры",
       "title": "Сыр \"Молога\"",
-      "priсe": "384",
+      "price": 384,
       "quantity": "424",
       "protein": "20",
       "fats": "28",
@@ -170,7 +142,7 @@
     {
       "category": "Хлеб и выпечка",
       "title": "Круассан с шоколадной начинкой",
-      "priсe": "149",
+      "price": 149,
       "quantity": "123",
       "protein": "6.8",
       "fats": "20.8",
@@ -184,7 +156,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Томаты черри сладкая гроздь",
-      "priсe": "609",
+      "price": 609,
       "quantity": "424",
       "protein": "0.8",
       "fats": "0.1",
@@ -198,7 +170,7 @@
     {
       "category": "Хлеб и выпечка",
       "title": "Круассан шоколадно-миндальный",
-      "priсe": "150",
+      "price": 150,
       "quantity": "123",
       "protein": "7.6",
       "fats": "24.4",
@@ -212,7 +184,7 @@
     {
       "category": "Сыры",
       "title": "Сыр полутвердый Natura Сливочный 45%",
-      "priсe": 84,
+      "price": 84,
       "quantity": "443",
       "protein": "25",
       "fats": "26",
@@ -226,7 +198,7 @@
     {
       "category": "Сладости",
       "title": "Twix Xtra шоколадный батончик с карамелью и печеньем",
-      "priсe": "99",
+      "price": 99,
       "quantity": "244",
       "protein": "4.4",
       "fats": "24",
@@ -240,7 +212,7 @@
     {
       "category": "Сладости",
       "title": "Шоколад молочный Яркие Джунгли",
-      "priсe": "270",
+      "price": 270,
       "quantity": "233",
       "protein": "7",
       "fats": "36.2",
@@ -254,7 +226,7 @@
     {
       "category": "Сладости",
       "title": "Конфеты M&M's драже с арахисом и молочным шоколадом, 80г",
-      "priсe": "125",
+      "price": "125",
       "quantity": 100,
       "protein": "9.5",
       "fats": "24.6",
@@ -268,7 +240,7 @@
     {
       "category": "Сладости",
       "title": "Шоколад Kinder Chocolate молочный",
-      "priсe": "185",
+      "price": "185",
       "quantity": "424",
       "protein": "8.7",
       "fats": "35",
@@ -282,7 +254,7 @@
     {
       "category": "Сладости",
       "title": "Конфеты M&M's драже с молочным шоколадом, 80г",
-      "priсe": "119",
+      "price": "119",
       "quantity": "244",
       "protein": "5",
       "fats": "19",
@@ -296,7 +268,7 @@
     {
       "category": "Сыры",
       "title": "Сыр \"Российский\"",
-      "priсe": "254",
+      "price": "254",
       "quantity": "244",
       "protein": "25.9",
       "fats": "27.1",
@@ -310,7 +282,7 @@
     {
       "category": "Сладости",
       "title": "Конфеты шоколадные Белочка Бабаевский",
-      "priсe": "315",
+      "price": "315",
       "quantity": "234",
       "protein": "8.8",
       "fats": "33.1",
@@ -324,7 +296,7 @@
     {
       "category": "Сладости",
       "title": "Шоколад Nestle KitKat с хрустящей вафлей",
-      "priсe": "105",
+      "price": "105",
       "quantity": "133",
       "protein": "7.8",
       "fats": "26.8",
@@ -338,7 +310,7 @@
     {
       "category": "Сладости",
       "title": "Шоколад молочный Аленка",
-      "priсe": "195",
+      "price": "195",
       "quantity": "323",
       "protein": "7",
       "fats": "34",
@@ -352,7 +324,7 @@
     {
       "category": "Сладости",
       "title": "Леденцы Chupa Chups мини-пакет 90г",
-      "priсe": "99",
+      "price": "99",
       "quantity": "444",
       "protein": "0",
       "fats": "0",
@@ -366,7 +338,7 @@
     {
       "category": "Сыры",
       "title": "Сыр \"Манчего дель руссо\" выдержанный 12 мес, 180 г",
-      "priсe": "122",
+      "price": "122",
       "quantity": 100,
       "protein": "20",
       "fats": "30.2",
@@ -380,7 +352,7 @@
     {
       "category": "Сыры",
       "title": "Сыр мягкий с белой плесенью \"Бри с двойными сливками\"",
-      "priсe": "295",
+      "price": "295",
       "quantity": "344",
       "protein": "17",
       "fats": "34",
@@ -394,7 +366,7 @@
     {
       "category": "Сыры",
       "title": "Сыр с плесенью бри President Petit Brie с белой корочкой 60%",
-      "priсe": "125",
+      "price": "125",
       "quantity": 100,
       "protein": "17",
       "fats": "32",
@@ -408,7 +380,7 @@
     {
       "category": "Сыры",
       "title": "Сыр Перлини копченый",
-      "priсe": "92",
+      "price": "92",
       "quantity": 100,
       "protein": "18",
       "fats": "18",
@@ -422,7 +394,7 @@
     {
       "category": "Чай и кофе",
       "title": "Чай зеленый Curtis Fresh Mojito в пирамидках, 20 шт.",
-      "priсe": "152",
+      "price": "152",
       "quantity": 100,
       "protein": "0",
       "fats": "0",
@@ -436,7 +408,7 @@
     {
       "category": "Сыры",
       "title": "Сыр плавленый Viola Сливочный 60%",
-      "priсe": "373",
+      "price": "373",
       "quantity": 100,
       "protein": "10",
       "fats": "20",
@@ -450,7 +422,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Лук репчатый",
-      "priсe": "41",
+      "price": "41",
       "quantity": 100,
       "protein": "1.4",
       "fats": "0",
@@ -464,7 +436,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Авокадо Хасс",
-      "priсe": "128",
+      "price": "128",
       "quantity": 100,
       "protein": "2",
       "fats": "20",
@@ -478,7 +450,7 @@
     {
       "category": "Чай и кофе",
       "title": "NESCAFE CLASSIC Crema банка, 95 г",
-      "priсe": "296",
+      "price": "296",
       "quantity": 100,
       "protein": "0",
       "fats": "0",
@@ -492,7 +464,7 @@
     {
       "category": "Чай и кофе",
       "title": "Кофе молотый Poetti Leggenda Oro",
-      "priсe": "642",
+      "price": "642",
       "quantity": "87",
       "protein": "13.9",
       "fats": "2.8",
@@ -506,7 +478,7 @@
     {
       "category": "Чай и кофе",
       "title": "Чай черный Greenfield Golden Ceylon листовой",
-      "priсe": "332",
+      "price": "332",
       "quantity": "244",
       "protein": "4.4г",
       "fats": "5.9г",
@@ -520,7 +492,7 @@
     {
       "category": "Чай и кофе",
       "title": "Кофе в зернах Poetti Leggenda Original натуральный жареный",
-      "priсe": "2185",
+      "price": "2185",
       "quantity": "76",
       "protein": "13.9",
       "fats": "14.4",
@@ -534,7 +506,7 @@
     {
       "category": "Чай и кофе",
       "title": "Кофе жареный молотый в дрип-пакетах \"Бразилия\"",
-      "priсe": "295",
+      "price": "295",
       "quantity": "63",
       "protein": "0",
       "fats": "0",
@@ -548,7 +520,7 @@
     {
       "category": "Чай и кофе",
       "title": "Напиток кофейный растворимый MACCOFFEE 3в1 Латте со вкусом карамели",
-      "priсe": "108",
+      "price": "108",
       "quantity": "535",
       "protein": "0.4",
       "fats": "2.6",
@@ -562,7 +534,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Томаты розовые Азербайджан",
-      "priсe": "213",
+      "price": "213",
       "quantity": "233",
       "protein": "0.9",
       "fats": "0.2",
@@ -576,7 +548,7 @@
     {
       "category": "Чай и кофе",
       "title": "Напиток Nescafe 3в1 Classic кофейный классический, 20 шт",
-      "priсe": "366",
+      "price": "366",
       "quantity": "63",
       "protein": "1.4",
       "fats": "12",
@@ -590,7 +562,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Огурцы длинноплодные",
-      "priсe": "78",
+      "price": "78",
       "quantity": "424",
       "protein": "0.65",
       "fats": "0.11",
@@ -604,7 +576,7 @@
     {
       "category": "Биг мак",
       "title": "Вкуско и точка",
-      "priсe": "185",
+      "price": "185",
       "quantity": "5",
       "protein": "",
       "fats": "999",
@@ -618,7 +590,7 @@
     {
       "category": "Чай и кофе",
       "title": "Кофе натуральный растворимый сублимированный",
-      "priсe": "295",
+      "price": "295",
       "quantity": "53",
       "protein": "0",
       "fats": "0",
@@ -632,7 +604,7 @@
     {
       "category": "Хлеб и выпечка",
       "title": "Ватрушки-мини с творогом и вишней, 4 шт",
-      "priсe": "183",
+      "price": "183",
       "quantity": "432",
       "protein": "9.4",
       "fats": "11.3",
@@ -646,7 +618,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Перец красный сладкий",
-      "priсe": "147",
+      "price": "147",
       "quantity": "",
       "protein": "1.3",
       "fats": "0",
@@ -660,7 +632,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Морковь мытая",
-      "priсe": "73",
+      "price": "73",
       "quantity": "453",
       "protein": "0.9",
       "fats": "0.2",
@@ -674,7 +646,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Капуста молодая новый урожай",
-      "priсe": "108",
+      "price": "108",
       "quantity": "535",
       "protein": "1.8",
       "fats": "0.1",
@@ -688,7 +660,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Картофель красный",
-      "priсe": "73",
+      "price": "73",
       "quantity": "535",
       "protein": "2",
       "fats": "0.4",
@@ -702,7 +674,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Чеснок молодой",
-      "priсe": "186",
+      "price": "186",
       "quantity": "533",
       "protein": "0",
       "fats": "0",
@@ -716,7 +688,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Укроп",
-      "priсe": "96",
+      "price": "96",
       "quantity": "244",
       "protein": "2.5",
       "fats": "0.5",
@@ -730,7 +702,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Грибы шампиньоны",
-      "priсe": "112",
+      "price": "112",
       "quantity": "535",
       "protein": "4.3",
       "fats": "1",
@@ -744,7 +716,7 @@
     {
       "category": "Овощи и зелень",
       "title": "Грибы Вешенка",
-      "priсe": "187",
+      "price": "187",
       "quantity": "",
       "protein": "2.5",
       "fats": "0.3",
@@ -758,7 +730,7 @@
     {
       "category": "Сладости",
       "title": "Шоколад тёмный Toblerone",
-      "priсe": "264",
+      "price": "264",
       "quantity": "124",
       "protein": "6.3",
       "fats": "50",
@@ -772,7 +744,7 @@
     {
       "category": "Сладости",
       "title": "Шоколад молочный RITTER SPORT с соленым кешью",
-      "priсe": "215",
+      "price": "215",
       "quantity": "424",
       "protein": "8.4",
       "fats": "33",
@@ -783,37 +755,6 @@
       "content": "Состав: сахар, кешью дробленый, масло какао, какао тертое, сухое цельное молоко, лактоза, сухое обезжиренное молоко, молочный жир, эмульгатор (соевый лецитин), соль.",
       "id": "fXJEPwr"
     }
-  ],
-  "categories": [
-    {
-      "id": "00934774800",
-      "category": "Чай и кофе",
-      "image_url": "https://avatars.mds.yandex.net/get-eda/3420935/40755a92dda6811b271d849feb554389/200x200"
-    },
-    {
-      "id": "00982535300",
-      "category": "Хлеб и выпечка",
-      "image_url": "https://avatars.mds.yandex.net/get-eda/3529621/40585a49e70d7c9f4bae4083d937fc11/200x200"
-    },
-    {
-      "id": "0041239800",
-      "category": "Овощи и зелень",
-      "image_url": "https://eda.yandex/images/3337779/d10c74a161cd75522451f98aed228103-200x200.png"
-    },
-    {
-      "id": "00984400",
-      "category": "Сыры",
-      "image_url": "https://eda.yandex/images/2394388/e9f59c84b34ef26e2172e7e88af29d8c-200x200.png"
-    },
-    {
-      "category": "Сладости",
-      "image_url": "https://avatars.mds.yandex.net/get-eda/3436037/f37270009a4eb28926f7d4a083072920/200x200",
-      "id": "Yz-bXTI"
-    },
-    {
-      "category": "huil",
-      "image_url": "luhi",
-      "id": "1pFrxhu"
-    }
   ]
-}
+
+

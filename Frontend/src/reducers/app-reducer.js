@@ -8,6 +8,8 @@ export const initialAppState = {
 	btnSearch: false,
 	currentPage: 20,
 	sort: 'asc',
+
+	sliderImg: [],
 };
 
 export const appReducer = (state = initialAppState, action) => {
@@ -54,6 +56,13 @@ export const appReducer = (state = initialAppState, action) => {
 			return {
 				...state,
 				sort: state.sort === 'asc' ? 'desc' : 'asc',
+			};
+		}
+
+		case ACTION_TYPE.SLIDER_IMG: {
+			return {
+				...state,
+				sliderImg: [...payload],
 			};
 		}
 

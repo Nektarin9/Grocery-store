@@ -1,3 +1,3 @@
 export const selectLoadingProducts = (state) => {
-	return state.catalogReducer.isLoading;
+	return state.catalogReducer.loadingProducts;
 };

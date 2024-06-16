@@ -1,5 +1,5 @@
 import { BackButton, Loader, Button } from '../../components';
-import { selectAllProducts } from '../../selectors';
+import { selectLoadingProducts } from '../../selectors';
 import { EditFields } from '../components/edit-fields/edit-fields';
 import {
 	actionDeleteProduct,
@@ -17,12 +17,13 @@ export const Editing = () => {
 	const { product_id } = useParams();
 	const navigate = useNavigate();
 
-	const allProducts = useSelector(selectAllProducts);
+	const allProducts = useSelector(selectLoadingProducts);
 	const product = findProduct(allProducts, product_id);
+
 
 	const [changeCategory, setСhangeCategory] = useState();
 	const [changeTitle, setСhangeTitle] = useState();
-	const [changeInputUrl, setСhangeInputUrl] = useState();
+	const [changeInputUrl, setСhangeInputUrl] = useState([]);
 	const [changeContent, setСhangeContent] = useState();
 	const [changePrice, setСhangePrice] = useState();
 	const [changeQuantity, setСhangeQuantity] = useState();
