@@ -10,6 +10,7 @@ export const InputEdit = forwardRef(
 			authorization,
 			onRemove,
 			btnDelete,
+			type,
 			...props
 		},
 		ref,
@@ -22,13 +23,14 @@ export const InputEdit = forwardRef(
 			borderRadius: '5px',
 			textAlign: 'center',
 		};
+		console.log(type)
 		return authorization ? (
-			<input placeholder={placeholder} style={style} {...props} ref={ref} />
+			<input placeholder={placeholder} type={type} style={style} {...props} ref={ref} />
 		) : (
 			<>
 				<input
 					placeholder={placeholder}
-					type="text"
+					type={type || 'text'}
 					style={style}
 					value={value ? value : ''}
 					onChange={({ target }) => {

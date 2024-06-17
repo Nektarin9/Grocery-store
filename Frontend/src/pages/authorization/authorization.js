@@ -54,8 +54,7 @@ export const Authorization = () => {
 			navigate('/');
 			dispatch(actionUpdateStatusProduct(`Добро пожаловать ${user.user.login}`));
 			dispatch(actionGetStatusEditing(true));
-			sessionStorage.setItem("userData", JSON.stringify(user))
-
+			sessionStorage.setItem('userData', JSON.stringify(user));
 		}
 	}, [dispatch, navigate, user, user.error, user?.user?.login]);
 
@@ -72,7 +71,13 @@ export const Authorization = () => {
 
 	return (
 		<>
-			{user.error === "Проверьте учетые данные" ? <div className={styles.error}><ErrorMessage>{user.error}</ErrorMessage></div> : <></>}
+			{user.error === 'Проверьте учетые данные' ? (
+				<div className={styles.error}>
+					<ErrorMessage>{user.error}</ErrorMessage>
+				</div>
+			) : (
+				<></>
+			)}
 			<BackButton />
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
 				<h2 className={styles.h2_text}>Вход и регистрация</h2>
@@ -89,7 +94,7 @@ export const Authorization = () => {
 				<div className={styles.margin_bottom}>
 					<InputEdit
 						placeholder={'Пароль'}
-						type="password"
+						type={'password'}
 						authorization={true}
 						{...register('password', {
 							onChange: () => setServerError(null),

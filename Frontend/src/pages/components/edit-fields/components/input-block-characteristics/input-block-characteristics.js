@@ -5,12 +5,14 @@ export const InputBlockCharacteristics = ({
 	setValue,
 	width,
 	placeholder,
+	type,
 	text,
 }) => {
 	return (
 		<div className={styles.input_block}>
 			<InputEdit
 				value={value}
+				type={type}
 				setValue={setValue}
 				width={width}
 				placeholder={placeholder}

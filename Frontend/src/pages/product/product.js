@@ -31,7 +31,7 @@ export const Product = () => {
 	const productsBasket = useSelector(selectAddProducts);
 	const user = useSelector(selectUser);
 
-	const [img, setImg] = useState(null)
+	const [img, setImg] = useState(null);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		if (product) {
@@ -92,13 +92,13 @@ export const Product = () => {
 								alt={product.title}
 							></img>
 							<div className={styles.slider_container}>
-								<Slider imageUrl={product.imageUrl}
-								setImg ={setImg}></Slider>
+								<Slider
+									imageUrl={product.imageUrl}
+									setImg={setImg}
+								></Slider>
 							</div>
 							<h3>О товаре</h3>
 							<p className={styles.p_gram}>{product.numberGrams} г</p>
-							<div className={styles.text_content}>{product.content}</div>
-							<CompositionWidget product={product} />
 						</div>
 						<div className={styles.right_container}>
 							<h2 className={styles.h2_title}>{product.title}</h2>
@@ -123,6 +123,10 @@ export const Product = () => {
 								<Button onClick={addProductBascet}>Добавить</Button>
 							</div>
 						</div>
+					</div>
+					<div className={styles.content_container}>
+						<div className={styles.text_content}>{product.content}</div>
+						<CompositionWidget product={product} />
 					</div>
 				</>
 			) : (

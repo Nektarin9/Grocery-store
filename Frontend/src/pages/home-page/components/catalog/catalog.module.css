@@ -2,7 +2,7 @@
 	max-width: 210px;
 	cursor: pointer;
 	margin: 5px 0;
-	padding: 4px 8px;
+	padding: 5px 8px;
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -19,7 +19,8 @@
 
 .img_catalog {
 	border-radius: 1rem;
-	width: 50px;
+	width: 40px;
+	height: 40px;
 	transition: 0.3s;
 	transform: 0.3s;
 	opacity: 0;

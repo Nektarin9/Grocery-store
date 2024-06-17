@@ -85,6 +85,7 @@ export const EditFields = ({
 				<InputBlockCharacteristics
 					value={changePrice}
 					setValue={setСhangePrice}
+					type={"number"}
 					width={'100px'}
 					placeholder="руб"
 					text={'Цена 1 шт (руб)'}
