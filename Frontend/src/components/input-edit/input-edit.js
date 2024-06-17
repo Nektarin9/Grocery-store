@@ -23,7 +23,6 @@ export const InputEdit = forwardRef(
 			borderRadius: '5px',
 			textAlign: 'center',
 		};
-		console.log(type)
 		return authorization ? (
 			<input placeholder={placeholder} type={type} style={style} {...props} ref={ref} />
 		) : (
