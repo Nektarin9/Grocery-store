@@ -8,7 +8,6 @@ export const initialAppState = {
 	btnSearch: false,
 	currentPage: 20,
 	sort: 'asc',
-
 	sliderImg: [],
 };
 

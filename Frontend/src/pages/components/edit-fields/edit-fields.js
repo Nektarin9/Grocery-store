@@ -51,7 +51,7 @@ export const EditFields = ({
 			<InputEdit
 				value={changeTitle}
 				setValue={setСhangeTitle}
-				width={'600px'}
+				width={true}
 				placeholder="Имя"
 			/>
 			<h3>Image url</h3>
@@ -62,7 +62,7 @@ export const EditFields = ({
 						<p>№ {index + 1}</p>
 						<InputEdit
 							value={value}
-							width={'600px'}
+							width={true}
 							btnDelete={true}
 							onChange={(e) => handleInputChange(index, e.target.value)}
 						/>
@@ -86,49 +86,49 @@ export const EditFields = ({
 					value={changePrice}
 					setValue={setСhangePrice}
 					type={"number"}
-					width={'100px'}
+					width={false}
 					placeholder="руб"
 					text={'Цена 1 шт (руб)'}
 				/>
 				<InputBlockCharacteristics
 					value={changeQuantity}
 					setValue={setСhangeQuantity}
-					width={'50px'}
+					width={false}
 					placeholder="шт"
 					text={'Количество (шт)'}
 				/>
 				<InputBlockCharacteristics
 					value={changeProtein}
 					setValue={setСhangeProtein}
-					width={'50px'}
+					width={false}
 					placeholder="г"
 					text={'Белки (г)'}
 				/>
 				<InputBlockCharacteristics
 					value={changeFats}
 					setValue={setСhangeFats}
-					width={'50px'}
+					width={false}
 					placeholder="г"
 					text={'Жиры (г)'}
 				/>
 				<InputBlockCharacteristics
 					value={changeCarbohydrates}
 					setValue={setСhangeCarbohydrates}
-					width={'50px'}
+					width={false}
 					placeholder="г"
 					text={'Углеводы (г)'}
 				/>
 				<InputBlockCharacteristics
 					value={changeCalorie}
 					setValue={setСhangeCalorie}
-					width={'80px'}
+					width={false}
 					placeholder="ккал"
 					text={'Калорий (ккал)'}
 				/>
 				<InputBlockCharacteristics
 					value={changeGrams}
 					setValue={setСhangeGrams}
-					width={'80px'}
+					width={false}
 					placeholder="г"
 					text={'Масса (г)'}
 				/>

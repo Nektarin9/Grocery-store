@@ -1,12 +1,11 @@
 import { useDispatch } from 'react-redux';
 import {
 	actionBtnSearch,
-	actionGetAllProducts,
 	actionGetInputSearch,
 } from '../../../../action';
 import { useSelector } from 'react-redux';
-import { selectProductSearch, selectSort } from '../../../../selectors';
-import { useCallback, useEffect } from 'react';
+import { selectProductSearch } from '../../../../selectors';
+import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { debounce } from './utils';
 import styles from './searchLine.module.css';

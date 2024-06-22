@@ -31,8 +31,12 @@ router.post(
   authenticated,
   hasRole([ROLES.ADMIN]),
   async (req, res) => {
-    const newProduct = await addProducts(req.body);
-    res.send(mapGoods(newProduct));
+    try {
+      const newProduct = await addProducts(req.body);
+      res.send(mapGoods(newProduct));
+    } catch (e) {
+      res.send({ error: e });
+    }
   }
 );
 
@@ -62,8 +66,12 @@ router.put(
   authenticated,
   hasRole([ROLES.ADMIN]),
   async (req, res) => {
-    const newProduct = await updateProduct(req.params.id, req.body);
-    res.send(mapGoods(newProduct));
+    try {
+      const newProduct = await updateProduct(req.params.id, req.body);
+      res.send(mapGoods(newProduct));
+    } catch (e) {
+      res.send(e);
+    }
   }
 );
 

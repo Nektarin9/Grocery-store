@@ -83,11 +83,13 @@ export const CategoryEditor = () => {
 				)}
 				<InputEdit
 					value={urlImg}
+					width={true}
 					setValue={setUrlImg}
 					placeholder={'URL image 50x50'}
 				/>
 				<InputEdit
 					value={nameCategory}
+					width={true}
 					setValue={setNameCategory}
 					placeholder={'Название категории'}
 				/>

@@ -110,7 +110,7 @@ export const Registration = () => {
 					/>
 				</div>
 				<div className={styles.input_container}>
-					<Button type="submit" disabled={!!formError} width={'200px'}>
+					<Button type="submit" disabled={!!formError}>
 						Зарегистрироваться
 					</Button>
 				</div>

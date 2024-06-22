@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import styles from "./inputEdit.module.css"
 
 export const InputEdit = forwardRef(
 	(
@@ -15,22 +16,15 @@ export const InputEdit = forwardRef(
 		},
 		ref,
 	) => {
-		const style = {
-			width,
-			height: '35px',
-			padding: '5px',
-			fontSize: '18px',
-			borderRadius: '5px',
-			textAlign: 'center',
-		};
+
 		return authorization ? (
-			<input placeholder={placeholder} type={type} style={style} {...props} ref={ref} />
+			<input placeholder={placeholder} type={type}  className={styles.input_reg} {...props} ref={ref} />
 		) : (
 			<>
 				<input
 					placeholder={placeholder}
 					type={type || 'text'}
-					style={style}
+					className={width ? styles.input_edit_long: styles.input_edit}
 					value={value ? value : ''}
 					onChange={({ target }) => {
 						setValue(target.value);

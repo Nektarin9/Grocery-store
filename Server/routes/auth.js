@@ -27,7 +27,7 @@ router.post("/register", async (req, res) => {
         user: mapUser(user),
       });
     } catch (e) {
-      res.send({ error: "Проверьте учетые данные" });
+      res.send({ error: "Проверьте учетные данные" });
     }
   });
   
