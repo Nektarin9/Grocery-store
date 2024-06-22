@@ -1,5 +1,6 @@
 const mapGoods = require("../helpers/mapGoods");
 const Products = require("../models/product");
+const hasBracketsAndDots = require("../helpers/hasBracketsAndDots");
 
 async function getProducts(
   limit = 20,
@@ -15,7 +16,7 @@ async function getProducts(
   if (category !== "") {
     filterQuery.category = category;
   }
-  if (search !== "") {
+  if (search !== "" && !hasBracketsAndDots(search)) {
     filterQuery.title = { $regex: search, $options: "i" };
   }
 
@@ -54,8 +55,8 @@ async function addProducts({
   image_url,
   content,
 }) {
-  image_url = [...image_url.filter((item) => item.trim() !== '')]
-  
+  image_url = [...image_url.filter((item) => item.trim() !== "")];
+
   const newProduct = await Products.create({
     category,
     title,
@@ -78,7 +79,7 @@ async function deleteProducts(id) {
 }
 
 async function updateProduct(id, data) {
-  const image_url =  [...data.image_url.filter((item) => item.trim() !== '')]
+  const image_url = [...data.image_url.filter((item) => item.trim() !== "")];
 
   const updatedProduct = {
     category: data.category,
