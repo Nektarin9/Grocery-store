@@ -12,6 +12,8 @@ const app = express();
 
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.use(express.static('../Frontend/build'));
+
 
 app.use("/", routes);
 
