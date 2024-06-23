@@ -1,5 +1,4 @@
 const express = require("express");
-
 const authenticated = require("../middlewares/authenticated");
 const hasRole = require("../middlewares/hasRole");
 
@@ -40,7 +39,7 @@ router.post(
   }
 );
 
-router.get("/product/:id", async (req, res) => {
+router.get("/products/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const data = await getProducts();
